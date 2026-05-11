@@ -1,0 +1,22 @@
+---
+slug: reductions
+title: Reduction Operations
+description: Reductions collapse a vector down to a single value.
+challenges:
+  - sum-reduction
+  - sum-over-dim
+  - argmax-over-dim
+  - matrix-logsumexp
+---
+
+Reductions are one of the foundational patterns in parallel computing. Given a set of values and an associative binary operator, a reduction collapses the set into a single output. Sum, product, min, max, bitwise AND/OR — all reductions of one input vector.
+
+On a GPU, the challenge is *not* the arithmetic. A reduction does $N$ operations to consume $N$ values; arithmetic-wise it's trivial. The real game is parallelism and memory: a naïve serial loop has $O(N)$ latency, while a tree reduction has $O(\log N)$ latency given enough threads. The art is mapping that tree onto threads, blocks, and warps so that bandwidth and the warp-level primitives are saturated rather than the arithmetic units.
+
+This path walks you from the simplest sum to the hierarchical reductions production codebases actually ship. Along the way you'll meet shared memory, warp shuffles, atomic operations, multi-pass kernels, and the classic gotchas — bank conflicts, divergent branches, occupancy ceilings, partial-sum precision drift.
+
+By the end you'll know when to roll your own and when to reach for a library primitive.
+
+## Great resources
+
+- [7-step optimization of parallel reduction with CUDA](https://medium.com/@rimikadhara/7-step-optimization-of-parallel-reduction-with-cuda-33a3b2feafd8) — walkthrough of NVIDIA's classic Mark Harris reduction optimization deck, kernel by kernel.
