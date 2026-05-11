@@ -16,3 +16,7 @@ On a GPU, the challenge is *not* the arithmetic. A reduction does $N$ operations
 This path walks you from the simplest sum to the hierarchical reductions production codebases actually ship. Along the way you'll meet shared memory, warp shuffles, atomic operations, multi-pass kernels, and the classic gotchas — bank conflicts, divergent branches, occupancy ceilings, partial-sum precision drift.
 
 By the end you'll know when to roll your own and when to reach for a library primitive.
+
+## Great resources
+
+- [7-step optimization of parallel reduction with CUDA](https://medium.com/@rimikadhara/7-step-optimization-of-parallel-reduction-with-cuda-33a3b2feafd8) — walkthrough of NVIDIA's classic Mark Harris reduction optimization deck, kernel by kernel.
