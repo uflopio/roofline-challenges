@@ -1,19 +1,18 @@
 {
   "signature": [
     { "name": "a", "kind": "in",  "dtype": "f32", "shape": ["N"] },
-    { "name": "b", "kind": "in",  "dtype": "f32", "shape": ["N"] },
-    { "name": "c", "kind": "out", "dtype": "f32", "shape": ["N"] },
+    { "name": "s", "kind": "out", "dtype": "f32", "shape": ["1"] },
     { "name": "n", "kind": "scalar", "dtype": "i32", "value": "N" }
   ],
   "sizes": [
     { "N": 1048576 },
     { "N": 4194304 },
     { "N": 16777216 },
-    { "N": 33554432 }
+    { "N": 33554432 },
+    { "N": 67108864 }
   ],
-  "tolerance": 1.0e-5,
+  "tolerance": 1.0,
   "init": {
-    "a": "uniform[0,1]",
-    "b": "uniform[0,1]"
+    "a": "uniform[0,1]"
   }
 }
