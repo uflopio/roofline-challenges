@@ -1,0 +1,33 @@
+---
+slug: matmul
+title: Matrix Multiply
+difficulty: MEDIUM
+tags: [matrix, compute-bound]
+depends_on: [vector-add]
+---
+
+Compute the dense matrix multiplication $C = A \cdot B$.
+
+Given matrices $A$ of shape $M \times K$ and $B$ of shape $K \times N$, produce matrix $C$ of shape $M \times N$ such that
+
+$$
+C_{i,j} = \sum_{k=0}^{K-1} A_{i,k} \cdot B_{k,j}.
+$$
+
+All matrices are stored in row-major order.
+
+## Input
+
+- Matrix $A$ of shape $M \times K$.
+- Matrix $B$ of shape $K \times N$.
+
+## Output
+
+- Matrix $C$ of shape $M \times N$ such that $C = A \cdot B$.
+
+## Sizes
+
+- $M = N = K = 2^9$
+- $M = N = K = 2^{10}$
+- $M = N = K = 2^{11}$
+- $M = N = K = 2^{12}$
