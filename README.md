@@ -38,11 +38,19 @@ The list below describes the stylistic criteria to keep in mind when designing p
 
 - The text _must_ $\LaTeX$ for mathematical formulae. Learn to use it here: [Learn LaTeX](https://www.overleaf.com/learn).
 
-- The text _should_ use underlines to denote vectors, like $\underline{a}$, $\underline{b}$ and $\underline{c}$.
-- The text _should_ use letters from the beginning of the alphabet for vectors, so $\underline{a}$, $\underline{b}$, $\underline{c}$ and so on.
+- The text _should_ use underlines to denote vectors, like $\underline{v}$, $\underline{u}$ and $\underline{w}$.
+- The text _should_ use letters like $\underline{v}$, $\underline{u}$, $\underline{w}$ for individual vectors.
+- The text _should_ use letters from the beginning of the alphabet for scalar inputs, so $a$, $b$ and $c$.
 - The text _should_ use capitals to denote matrices, like $A$, $B$ and $C$.
 - The text _should_ use letters from the beginning of the alphabet for matrices, so $A$, $B$, $C$ and so on.
 - The text _should_ use the letters $i$, $j$, $k$ for indexing dimensions 1 to 3.
+- The text _should_ use $\Sigma$- and $\Pi$-notation without specifying a starting iteration number when summing over a vector, so $\Sigma^N_i$ is the same as $\Sigma^{N - 1}_{i=0}$, same as $\Sigma^N_{i=1}$. 
+
+- The text _must not_ use latex for showing indexing, don't use "$\text{for } i = 0, 1, \dots, N - 1$."
+- The text _should avoid_ set membership for indices, like $i \in [0; N)$, unless the problem statement is more clearly stated mathematically.
+- The text _should_ use brackets $[a; b]$ for inclusive bounds and parentheses $(a; b)$ for exclusive bounds.
+- The text _should_ use implicit multiplication $ab$ over "$a \cdot b$" or "$a \times b$."
+- The text _must_ use $4 \text{ mod } 3$ instead of `4 % 3` to talk about modular arithmetic.
 
 - The text _must_ use capitals for hyper-parameters and constants that don't change across runs of the family of algorithms, like $N$, $X$ or $Q$.
 <!-- vale write-good.E-Prime = NO -->
