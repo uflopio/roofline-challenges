@@ -9,9 +9,16 @@ A collection of challenge for [roofline.dev](https://roofline.dev).
 - **SHOULD / SHOULD NOT**. Exceptions allowed, but discouraged.
 - **MAY / MAY NOT**. Soft preference, needed for style and consistency.
 
+## Rules
+
+- You must not override the input if it is provided as `const`.
+- The text _must not_ use libraries like cuBLAS, cuDNN and similar unless explicitly stated.
+
 ## Style
 
-### Problems
+The list below describes the stylistic criteria to keep in mind when designing problems for **Roofline**.
+
+### Design
 
 <!-- vale write-good.TooWordy = NO -->
 - The problem _must_ support multiple valid solutions with differing performance characteristics.
@@ -24,6 +31,8 @@ A collection of challenge for [roofline.dev](https://roofline.dev).
 <!-- vale write-good.E-Prime = YES -->
 <!-- vale write-good.Passive = YES -->
 - The problem _may_ expect results within some numerical tolerance.
+- The problem _must_ expect the datatype with the same precision for input as for output and vice versa.  
+- The problem _must_ come with a reference implementation used for correctness checking.
 
 ### Text
 
@@ -34,11 +43,16 @@ A collection of challenge for [roofline.dev](https://roofline.dev).
 - The text _should_ use capitals to denote matrices, like $A$, $B$ and $C$.
 - The text _should_ use letters from the beginning of the alphabet for matrices, so $A$, $B$, $C$ and so on.
 - The text _should_ use the letters $i$, $j$, $k$ for indexing dimensions 1 to 3.
-- The text _must_ use capitals for hyper-parameters and constants that don't change across runs of the same family of algorithms, like $N$, $X$ or $Q$.
-<!-- vale write-good.Passive = NO -->
+
+- The text _must_ use capitals for hyper-parameters and constants that don't change across runs of the family of algorithms, like $N$, $X$ or $Q$.
 <!-- vale write-good.E-Prime = NO -->
-- The text _must_ pose the problems in terms that do not hint at how it can be accelerated in hardware.
-<!-- vale write-good.E-Prime = YES -->
+<!-- vale write-good.Passive = NO -->
+- The text _should_ pose the problems in terms that do not hint at how it can be accelerated in hardware.
 <!-- vale write-good.Passive = YES -->
+- The text _must_ state whether the layout is row-major or column-major, if applicable. 
+<!-- vale write-good.E-Prime = YES -->
 - The text _should_ state numerical tolerances for the results, if applicable.
-- The text _should_ state 
+- The text _must_ explicitly state the method for computing tolerances: absolute, relative, element-wise max and so on.
+- The text _should_ stay the distribution if the inputs.
+- The text _should_ state whether the harness uses adversarial inputs.
+- The text _may_ include an example of indexing with the appropriate strides.
