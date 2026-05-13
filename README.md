@@ -64,3 +64,5 @@ The list below describes the stylistic criteria to keep in mind when designing p
 - The text _should_ stay the distribution if the inputs.
 - The text _should_ state whether the harness uses adversarial inputs.
 - The text _may_ include an example of indexing with the appropriate strides.
+- The text _must not_ put any delimiters between the subscript indices, instead of $A_{i,j}$ (`A_{i,j}`), use $A_{ij}$ (`A_{i,j}`). 
+- The text _must_ put a thin space between numerical indices, instead of $A_{11}$ (`A_{11}`), use $A_{1\,1}$ (`A_{1\,1}`).
