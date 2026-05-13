@@ -1,0 +1,40 @@
+{
+  "signature": [
+    {
+      "name": "predictions",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "targets",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 1e-05,
+  "init": {
+    "predictions": "uniform[0,1]",
+    "targets": "uniform[0,1]"
+  }
+}

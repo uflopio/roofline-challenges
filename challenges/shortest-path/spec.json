@@ -1,0 +1,52 @@
+{
+  "signature": [
+    {
+      "name": "d_adj_matrix",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "source",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    },
+    {
+      "name": "d_distances",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
+  ],
+  "sizes": [
+    {
+      "N": 512
+    },
+    {
+      "N": 2048
+    },
+    {
+      "N": 4096
+    },
+    {
+      "N": 6144
+    },
+    {
+      "N": 8192
+    }
+  ],
+  "tolerance": 0,
+  "is_exact": true,
+  "init": {}
+}

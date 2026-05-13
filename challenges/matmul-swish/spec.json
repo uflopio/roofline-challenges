@@ -1,0 +1,98 @@
+{
+  "signature": [
+    {
+      "name": "input_matrix",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+      ]
+    },
+    {
+      "name": "weight_matrix",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+      ]
+    },
+    {
+      "name": "bias",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+      ]
+    },
+    {
+      "name": "scaling_factor",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "test_case[\"batch_size\""
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+      ]
+    },
+    {
+      "name": "batch_size",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "BATCH_SIZE"
+    },
+    {
+      "name": "in_features",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "IN_FEATURES"
+    },
+    {
+      "name": "out_features",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "OUT_FEATURES"
+    }
+  ],
+  "sizes": [
+    {
+      "SCALING_FACTOR": 128,
+      "BATCH_SIZE": 1024,
+      "IN_FEATURES": 512,
+      "OUT_FEATURES": 2
+    },
+    {
+      "SCALING_FACTOR": 256,
+      "BATCH_SIZE": 2048,
+      "IN_FEATURES": 1024,
+      "OUT_FEATURES": 1
+    },
+    {
+      "SCALING_FACTOR": 64,
+      "BATCH_SIZE": 512,
+      "IN_FEATURES": 256,
+      "OUT_FEATURES": 0
+    },
+    {
+      "SCALING_FACTOR": 512,
+      "BATCH_SIZE": 4096,
+      "IN_FEATURES": 2048,
+      "OUT_FEATURES": 3
+    },
+    {
+      "SCALING_FACTOR": 32,
+      "BATCH_SIZE": 256,
+      "IN_FEATURES": 128,
+      "OUT_FEATURES": 1
+    }
+  ],
+  "tolerance": 1e-05,
+  "init": {
+    "input_matrix": "normal[0,1]",
+    "weight_matrix": "normal[0,1]",
+    "bias": "normal[0,0.1]"
+  }
+}

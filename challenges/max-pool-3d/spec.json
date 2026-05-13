@@ -1,0 +1,122 @@
+{
+  "signature": [
+    {
+      "name": "input",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "KERNEL_SIZE*STRIDE*PADDING*DILATION*H*W*D"
+      ]
+    },
+    {
+      "name": "kernel_size",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "test_case[\"height\""
+    },
+    {
+      "name": "stride",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "STRIDE"
+    },
+    {
+      "name": "padding",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "PADDING"
+    },
+    {
+      "name": "dilation",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "DILATION"
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "KERNEL_SIZE*STRIDE*PADDING*DILATION*H*W*D"
+      ]
+    },
+    {
+      "name": "H",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "H"
+    },
+    {
+      "name": "W",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "W"
+    },
+    {
+      "name": "D",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "D"
+    }
+  ],
+  "sizes": [
+    {
+      "KERNEL_SIZE": 256,
+      "STRIDE": 256,
+      "PADDING": 256,
+      "DILATION": 2,
+      "H": 2,
+      "W": 0,
+      "D": 2
+    },
+    {
+      "KERNEL_SIZE": 512,
+      "STRIDE": 512,
+      "PADDING": 512,
+      "DILATION": 3,
+      "H": 2,
+      "W": 1,
+      "D": 1
+    },
+    {
+      "KERNEL_SIZE": 1024,
+      "STRIDE": 1024,
+      "PADDING": 1024,
+      "DILATION": 4,
+      "H": 4,
+      "W": 2,
+      "D": 1
+    },
+    {
+      "KERNEL_SIZE": 512,
+      "STRIDE": 512,
+      "PADDING": 512,
+      "DILATION": 3,
+      "H": 3,
+      "W": 1,
+      "D": 3
+    },
+    {
+      "KERNEL_SIZE": 1024,
+      "STRIDE": 1024,
+      "PADDING": 1024,
+      "DILATION": 5,
+      "H": 2,
+      "W": 2,
+      "D": 2
+    },
+    {
+      "KERNEL_SIZE": 1024,
+      "STRIDE": 1024,
+      "PADDING": 1024,
+      "DILATION": 7,
+      "H": 3,
+      "W": 3,
+      "D": 1
+    }
+  ],
+  "tolerance": 9e-05,
+  "init": {
+    "input": "uniform[-1,1]"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "signature": [
+    {
+      "name": "X",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*D"
+      ]
+    },
+    {
+      "name": "Y",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "B*D"
+      ]
+    },
+    {
+      "name": "B",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "B"
+    },
+    {
+      "name": "D",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "D"
+    }
+  ],
+  "sizes": [
+    {
+      "B": 128,
+      "D": 4096
+    },
+    {
+      "B": 256,
+      "D": 4096
+    },
+    {
+      "B": 128,
+      "D": 8192
+    },
+    {
+      "B": 256,
+      "D": 8192
+    },
+    {
+      "B": 128,
+      "D": 16384
+    }
+  ],
+  "tolerance": 1e-06,
+  "init": {
+    "X": "normal[0,1]"
+  }
+}

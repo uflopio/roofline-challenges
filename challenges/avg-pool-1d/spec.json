@@ -1,0 +1,49 @@
+{
+  "signature": [
+    {
+      "name": "input",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "kernel_size",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "test_case[\"size\""
+    },
+    {
+      "name": "stride",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "STRIDE"
+    },
+    {
+      "name": "padding",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "PADDING"
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "H",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "H"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 4e-05,
+  "init": {
+    "input": "uniform[-1,1]"
+  }
+}

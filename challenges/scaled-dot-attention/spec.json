@@ -1,0 +1,104 @@
+{
+  "signature": [
+    {
+      "name": "Q",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*H*S*E"
+      ]
+    },
+    {
+      "name": "K",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*H*S*E"
+      ]
+    },
+    {
+      "name": "V",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*H*S*E"
+      ]
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "B*H*S*E"
+      ]
+    },
+    {
+      "name": "B",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "B"
+    },
+    {
+      "name": "H",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "H"
+    },
+    {
+      "name": "S",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "S"
+    },
+    {
+      "name": "E",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "E"
+    }
+  ],
+  "sizes": [
+    {
+      "B": 8,
+      "H": 16,
+      "S": 512,
+      "E": 64
+    },
+    {
+      "B": 16,
+      "H": 32,
+      "S": 256,
+      "E": 64
+    },
+    {
+      "B": 4,
+      "H": 32,
+      "S": 1024,
+      "E": 32
+    },
+    {
+      "B": 32,
+      "H": 8,
+      "S": 512,
+      "E": 128
+    },
+    {
+      "B": 8,
+      "H": 16,
+      "S": 512,
+      "E": 256
+    },
+    {
+      "B": 8,
+      "H": 16,
+      "S": 2048,
+      "E": 64
+    }
+  ],
+  "tolerance": 0.005,
+  "init": {
+    "Q": "normal[0,1]",
+    "K": "normal[0,1]",
+    "V": "normal[0,1]"
+  }
+}

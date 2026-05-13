@@ -1,0 +1,37 @@
+{
+  "signature": [
+    {
+      "name": "input_matrix",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "scalar",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    },
+    {
+      "name": "output_matrix",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 7e-06,
+  "init": {
+    "input_matrix": "uniform[-1,1]"
+  }
+}

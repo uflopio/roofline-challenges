@@ -1,0 +1,27 @@
+---
+slug: grayscale
+title: Grayscale Conversion
+difficulty: EASY
+ranked: false
+tags: [graphics]
+---
+
+Perform RGB to grayscale conversion on an input image using the weighted method:
+$$
+\text{Gray}[i][j] = 0.299 \cdot R[i][j] + 0.587 \cdot G[i][j] + 0.114 \cdot B[i][j]
+$$
+
+This formula accounts for human perception of color, with green contributing most to the intensity perceived by humans.
+
+## Input
+- RGB image of size $\text{height} \times \text{width} \times \text{3}$
+
+## Output
+- Grayscale image of size $\text{height} \times \text{width}$
+
+## Sizes
+
+- 512x512
+- 1024x768
+- 1920x1080
+- 3840x2160

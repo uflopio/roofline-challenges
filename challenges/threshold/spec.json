@@ -1,0 +1,44 @@
+{
+  "signature": [
+    {
+      "name": "input_image",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "threshold_value",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "height"
+    },
+    {
+      "name": "output_image",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "height",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "width"
+    },
+    {
+      "name": "width",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "WIDTH"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 0,
+  "is_exact": true,
+  "init": {
+    "input_image": "uniform[0,255]"
+  }
+}

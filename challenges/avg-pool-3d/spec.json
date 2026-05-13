@@ -1,0 +1,102 @@
+{
+  "signature": [
+    {
+      "name": "input",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "KERNEL_SIZE*STRIDE*PADDING*H*W*D"
+      ]
+    },
+    {
+      "name": "kernel_size",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "test_case[\"height\""
+    },
+    {
+      "name": "stride",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "STRIDE"
+    },
+    {
+      "name": "padding",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "PADDING"
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "KERNEL_SIZE*STRIDE*PADDING*H*W*D"
+      ]
+    },
+    {
+      "name": "H",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "H"
+    },
+    {
+      "name": "W",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "W"
+    },
+    {
+      "name": "D",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "D"
+    }
+  ],
+  "sizes": [
+    {
+      "KERNEL_SIZE": 192,
+      "STRIDE": 192,
+      "PADDING": 192,
+      "H": 5,
+      "W": 2,
+      "D": 2
+    },
+    {
+      "KERNEL_SIZE": 224,
+      "STRIDE": 224,
+      "PADDING": 224,
+      "H": 7,
+      "W": 3,
+      "D": 3
+    },
+    {
+      "KERNEL_SIZE": 512,
+      "STRIDE": 512,
+      "PADDING": 512,
+      "H": 3,
+      "W": 3,
+      "D": 1
+    },
+    {
+      "KERNEL_SIZE": 784,
+      "STRIDE": 784,
+      "PADDING": 784,
+      "H": 5,
+      "W": 2,
+      "D": 2
+    },
+    {
+      "KERNEL_SIZE": 1024,
+      "STRIDE": 1024,
+      "PADDING": 1024,
+      "H": 3,
+      "W": 3,
+      "D": 1
+    }
+  ],
+  "tolerance": 1e-05,
+  "init": {
+    "input": "uniform[-1,1]"
+  }
+}

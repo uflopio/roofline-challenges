@@ -1,0 +1,31 @@
+---
+slug: conv-square-3d
+title: 3D Square Convolution
+difficulty: HARD
+ranked: false
+tags: [convolution]
+---
+
+Perform 3D convolution between an input volume and a cubic kernel:
+$$
+C[i,j,k] = \sum_{x=0}^{K-1}\sum_{y=0}^{K-1}\sum_{z=0}^{K-1} A[i+x,j+y,k+z] \cdot B[x,y,z]
+$$
+
+The convolution operation slides the 3D kernel over the input volume, computing the sum of element-wise multiplications at each position. Zero padding is used at the boundaries.
+
+## Input
+- Volume $A$ of size $\text{size} \times \text{size} \times \text{size}$ (input volume)
+- Volume $B$ of size $K \times K \times K$ (cubic convolution kernel)
+- $K$ is odd and smaller than $\text{size}$
+
+## Output
+- Volume $C$ of size $\text{size} \times \text{size} \times \text{size}$ (convolved volume)
+
+## Sizes
+
+- $M = 64, N = 64, K = 64, H = 3$
+- $M = 32, N = 32, K = 32, H = 9$
+- $M = 96, N = 96, K = 96, H = 11$
+- $M = 128, N = 128, K = 128, H = 5$
+- $M = 2^{8}, N = 2^{8}, K = 2^{8}, H = 7$
+- $M = 2^{9}, N = 2^{9}, K = 2^{9}, H = 9$

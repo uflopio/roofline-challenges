@@ -1,0 +1,37 @@
+{
+  "signature": [
+    {
+      "name": "input_image",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "output_image",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "height",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "height"
+    },
+    {
+      "name": "width",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "width"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 0.001,
+  "init": {
+    "input_image": "uniform[0,255]"
+  }
+}

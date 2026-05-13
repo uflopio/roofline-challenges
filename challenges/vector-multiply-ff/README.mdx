@@ -1,0 +1,35 @@
+---
+slug: vector-multiply-ff
+title: Vector Multiplication over Finite Field
+difficulty: MEDIUM
+ranked: false
+tags: [crypto]
+---
+
+Perform element-wise multiplication of two vectors in the finite field:
+
+$$
+c_i = (a_i \cdot b_i) \bmod p
+$$
+
+Where the modulus is the 31-bit Mersenne prime:
+
+$$
+p = 2^{31} - 1 = 2147483647
+$$
+
+## Input
+- Vectors `a` and `b` of length $n$, with each element in $[0, p)$.
+
+## Output
+- Vector `c` of length $n$ such that:
+  $$
+  c_i = a_i \cdot b_i \bmod p
+  $$
+
+## Sizes
+
+- $N = 2^{20}$
+- $N = 2^{22}$
+- $N = 2^{24}$
+- $N = 2^{25}$

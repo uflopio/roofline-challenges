@@ -1,0 +1,88 @@
+{
+  "signature": [
+    {
+      "name": "A",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "B",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "C",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "alpha",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "M"
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "M",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "M"
+    },
+    {
+      "name": "N",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    },
+    {
+      "name": "K",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "K"
+    }
+  ],
+  "sizes": [
+    {
+      "M": 512,
+      "N": 512,
+      "K": 512
+    },
+    {
+      "M": 1024,
+      "N": 512,
+      "K": 1024
+    },
+    {
+      "M": 512,
+      "N": 1024,
+      "K": 512
+    },
+    {
+      "M": 1024,
+      "N": 1024,
+      "K": 1024
+    }
+  ],
+  "tolerance": 0.0001,
+  "init": {
+    "A": "uniform[-1,1]",
+    "B": "uniform[-1,1]",
+    "C": "uniform[-1,1]"
+  }
+}

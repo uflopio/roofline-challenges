@@ -1,0 +1,33 @@
+---
+slug: relu
+title: ReLU Activation
+difficulty: EASY
+ranked: false
+tags: [matrix, memory-bound, activation]
+---
+
+Apply the ReLU (Rectified Linear Unit) activation function element-wise.
+
+Given matrix $A$ of shape $M \times N$, produce matrix $C$ of shape $M \times N$ such that
+
+$$
+C_{i,j} = \max(0, A_{i,j}).
+$$
+
+All matrices are stored in row-major order.
+
+## Input
+
+- Matrix $A$ of shape $M \times N$.
+
+## Output
+
+- Matrix $C$ of shape $M \times N$.
+
+## Sizes
+
+- $M = 4096, N = 4096$
+- $M = 6144, N = 4096$
+- $M = 4096, N = 7168$
+- $M = 4096, N = 8192$
+- $M = 8192, N = 8192$

@@ -1,0 +1,82 @@
+{
+  "signature": [
+    {
+      "name": "anchor",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*E"
+      ]
+    },
+    {
+      "name": "positive",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*E"
+      ]
+    },
+    {
+      "name": "negative",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "B*E"
+      ]
+    },
+    {
+      "name": "loss",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "B*E"
+      ]
+    },
+    {
+      "name": "B",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "B"
+    },
+    {
+      "name": "E",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "E"
+    },
+    {
+      "name": "margin",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "margin"
+    }
+  ],
+  "sizes": [
+    {
+      "B": 128,
+      "E": 4096
+    },
+    {
+      "B": 256,
+      "E": 8192
+    },
+    {
+      "B": 256,
+      "E": 16384
+    },
+    {
+      "B": 512,
+      "E": 8192
+    },
+    {
+      "B": 1024,
+      "E": 1024
+    }
+  ],
+  "tolerance": 0.0006,
+  "init": {
+    "anchor": "normal[0,1]",
+    "positive": "normal[0,1]",
+    "negative": "normal[0,1]"
+  }
+}

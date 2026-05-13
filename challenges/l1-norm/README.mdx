@@ -1,0 +1,29 @@
+---
+slug: l1-norm
+title: L1 Normalization
+difficulty: EASY
+ranked: false
+tags: [normalization]
+---
+
+Implement L1 Normalization for a 2D tensor. L1 normalization is a technique where each row of the input tensor is normalized by the sum of the absolute values of its elements.
+
+The formula for L1 Normalization is:
+$$
+\text{y} = \frac{x}{\sum |x_i|}
+$$
+where the sum of absolute values is computed across the second dimension (D) for each element in the first dimension (B).
+
+## Input
+- Tensor $X$ of shape $(B, D)$ (input data)
+
+## Output
+- Tensor $Y$ of shape $(B, D)$ (normalized data)
+
+## Sizes
+
+- $B = 128, D = 2^{12}$
+- $B = 2^{8}, D = 2^{12}$
+- $B = 128, D = 2^{13}$
+- $B = 2^{8}, D = 2^{13}$
+- $B = 128, D = 2^{14}$

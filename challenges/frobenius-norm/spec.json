@@ -1,0 +1,42 @@
+{
+  "signature": [
+    {
+      "name": "X",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "Y",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "M*N*K"
+      ]
+    },
+    {
+      "name": "size",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "total_elements"
+    }
+  ],
+  "sizes": [
+    {
+      "M": 4,
+      "N": 1024,
+      "K": 1024
+    },
+    {
+      "M": 32,
+      "N": 128,
+      "K": 128
+    }
+  ],
+  "tolerance": 1e-06,
+  "init": {
+    "X": "normal[0,1]"
+  }
+}

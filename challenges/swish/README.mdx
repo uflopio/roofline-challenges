@@ -1,0 +1,31 @@
+---
+slug: swish
+title: Swish
+difficulty: EASY
+ranked: false
+tags: [activation-function]
+---
+
+Perform the Swish activation function on an input matrix:
+$$
+C_{i,j} = A_{i,j} \cdot \sigma(A_{i,j})
+$$
+
+The Swish function is defined as:
+$$
+\text{swish}(x) = x \cdot \sigma(x)
+$$
+
+## Input
+- Matrix $A$ of size $M \times N$ containing floating-point values
+
+## Output
+- Matrix $C$ of size $M \times N$ containing the Swish activation values
+
+## Sizes
+
+- $M = 2^{12}, N = 2^{12}$
+- $M = 6144, N = 2^{12}$
+- $M = 2^{12}, N = 7168$
+- $M = 2^{12}, N = 2^{13}$
+- $M = 2^{13}, N = 2^{13}$

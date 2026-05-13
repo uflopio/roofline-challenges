@@ -1,0 +1,95 @@
+{
+  "signature": [
+    {
+      "name": "image",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "H*W*Kh*Kw"
+      ]
+    },
+    {
+      "name": "kernel",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "H*W*Kh*Kw"
+      ]
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "H*W*Kh*Kw"
+      ]
+    },
+    {
+      "name": "H",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "H"
+    },
+    {
+      "name": "W",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "W"
+    },
+    {
+      "name": "Kh",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "Kh"
+    },
+    {
+      "name": "Kw",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "Kw"
+    }
+  ],
+  "sizes": [
+    {
+      "H": 512,
+      "W": 512,
+      "Kh": 3,
+      "Kw": 3
+    },
+    {
+      "H": 1024,
+      "W": 1024,
+      "Kh": 5,
+      "Kw": 5
+    },
+    {
+      "H": 2048,
+      "W": 2048,
+      "Kh": 7,
+      "Kw": 7
+    },
+    {
+      "H": 512,
+      "W": 512,
+      "Kh": 9,
+      "Kw": 9
+    },
+    {
+      "H": 1024,
+      "W": 1024,
+      "Kh": 11,
+      "Kw": 11
+    },
+    {
+      "H": 2048,
+      "W": 2048,
+      "Kh": 13,
+      "Kw": 13
+    }
+  ],
+  "tolerance": 0.0002,
+  "init": {
+    "image": "uniform[-1,1]",
+    "kernel": "uniform[-1,1]"
+  }
+}
