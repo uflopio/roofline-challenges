@@ -25,9 +25,9 @@ The average pooling operation slides a window of size $k$ over the input tensor 
 
 ## Sizes
 
-- H=2097152, K=7, S=4, P=3
-- H=4194304, K=2, S=1, P=0
-- H=8388608, K=3, S=2, P=1
-- H=16777216, K=4, S=2, P=1
-- H=33554432, K=3, S=1, P=1
-- H=67108864, K=5, S=3, P=2
+- $KERNEL_SIZE = 2^{21}, STRIDE = 7, PADDING = 4, H = 3$
+- $KERNEL_SIZE = 2^{22}, STRIDE = 2, PADDING = 1, H = 0$
+- $KERNEL_SIZE = 2^{23}, STRIDE = 3, PADDING = 2, H = 1$
+- $KERNEL_SIZE = 2^{24}, STRIDE = 4, PADDING = 2, H = 1$
+- $KERNEL_SIZE = 2^{25}, STRIDE = 3, PADDING = 1, H = 1$
+- $KERNEL_SIZE = 2^{26}, STRIDE = 5, PADDING = 3, H = 2$

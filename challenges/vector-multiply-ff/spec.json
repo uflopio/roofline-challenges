@@ -28,7 +28,7 @@
       "name": "n",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "test_case[\"dims\""
+      "value": "N"
     }
   ],
   "sizes": [
@@ -48,7 +48,7 @@
   "tolerance": 0,
   "is_exact": true,
   "init": {
-    "d_input1": "uniform[0,1]",
-    "d_input2": "uniform[0,1]"
+    "d_input1": "uniform_int[0,2147483646]",
+    "d_input2": "uniform_int[0,2147483646]"
   }
 }

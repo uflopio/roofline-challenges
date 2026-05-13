@@ -5,7 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "H*W*Kh*Kw"
+        "H*W"
       ]
     },
     {
@@ -13,7 +13,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "H*W*Kh*Kw"
+        "Kh*Kw"
       ]
     },
     {
@@ -21,7 +21,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "H*W*Kh*Kw"
+        "H*W"
       ]
     },
     {

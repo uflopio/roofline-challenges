@@ -13,7 +13,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*F*D1*D2"
+        "F*D1*D2"
       ]
     },
     {
@@ -21,7 +21,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*F*D1*D2"
+        "F*D1*D2"
       ]
     },
     {

@@ -13,7 +13,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "B*D"
+        "B"
       ]
     },
     {

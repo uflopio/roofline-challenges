@@ -5,7 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "total"
       ]
     },
     {
@@ -13,7 +13,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "total"
       ]
     },
     {
@@ -21,7 +21,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "1"
       ]
     },
     {
@@ -29,30 +29,25 @@
       "kind": "in",
       "dtype": "i32",
       "shape": [
-        "M*N"
+        "ndim"
       ]
     },
     {
       "name": "ndim",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "torch.tensor(list(test_case[\"shape\""
+      "value": "ndim"
     }
   ],
   "sizes": [
-    {
-      "M": 4096,
-      "N": 4096
-    },
-    {
-      "M": 8192,
-      "N": 8192
-    }
+    { "total": 4194304,  "ndim": 3, "shape": [4, 1024, 1024] },
+    { "total": 524288,   "ndim": 3, "shape": [32, 128, 128] },
+    { "total": 16777216, "ndim": 4, "shape": [8, 32, 256, 256] },
+    { "total": 33554432, "ndim": 5, "shape": [4, 16, 32, 128, 128] }
   ],
   "tolerance": 0.0001,
   "init": {
     "predictions": "normal[0,1]",
-    "targets": "normal[0,1]",
-    "shape": "normal[0,1]"
+    "targets": "normal[0,1]"
   }
 }

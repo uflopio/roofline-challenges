@@ -1,17 +1,53 @@
 {
   "signature": [
-    { "name": "A", "kind": "in",  "dtype": "f32", "shape": ["M*N"] },
-    { "name": "s", "kind": "out", "dtype": "f32", "shape": ["1"] },
-    { "name": "m", "kind": "scalar", "dtype": "i32", "value": "M" },
-    { "name": "n", "kind": "scalar", "dtype": "i32", "value": "N" }
+    {
+      "name": "A",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "s",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "1"
+      ]
+    },
+    {
+      "name": "m",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "M"
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
   ],
   "sizes": [
-    { "M": 1024, "N": 1024 },
-    { "M": 2048, "N": 2048 },
-    { "M": 4096, "N": 4096 },
-    { "M": 8192, "N": 8192 }
+    {
+      "M": 1024,
+      "N": 1024
+    },
+    {
+      "M": 2048,
+      "N": 2048
+    },
+    {
+      "M": 4096,
+      "N": 4096
+    },
+    {
+      "M": 8192,
+      "N": 8192
+    }
   ],
-  "tolerance": 1.0e-3,
+  "tolerance": 0.001,
   "init": {
     "A": "uniform[0,1]"
   }

@@ -5,7 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N*M"
+        "N"
       ]
     },
     {

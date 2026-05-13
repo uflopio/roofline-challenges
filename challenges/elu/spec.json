@@ -20,41 +20,46 @@
       "name": "n",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "M"
+      "value": "N"
     },
     {
       "name": "m",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "N"
+      "value": "M"
     },
     {
       "name": "alpha",
       "kind": "scalar",
-      "dtype": "i32",
-      "value": "self.alpha"
+      "dtype": "f32",
+      "value": "alpha"
     }
   ],
   "sizes": [
     {
       "M": 4096,
-      "N": 4096
+      "N": 4096,
+      "alpha": 1.0
     },
     {
       "M": 6144,
-      "N": 4096
+      "N": 4096,
+      "alpha": 1.0
     },
     {
       "M": 4096,
-      "N": 7168
+      "N": 7168,
+      "alpha": 1.0
     },
     {
       "M": 4096,
-      "N": 8192
+      "N": 8192,
+      "alpha": 1.0
     },
     {
       "M": 8192,
-      "N": 8192
+      "N": 8192,
+      "alpha": 1.0
     }
   ],
   "tolerance": 5e-05,

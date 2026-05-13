@@ -5,37 +5,83 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height*width"
       ]
     },
     {
       "name": "kernel_size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "height"
+      "value": "kernel_size"
     },
     {
       "name": "output_image",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height*width"
       ]
     },
     {
       "name": "height",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "width"
+      "value": "height"
     },
     {
       "name": "width",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "WIDTH"
+      "value": "width"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "height": 2560,
+      "width": 1440,
+      "kernel_size": 15
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "kernel_size": 21
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "kernel_size": 27
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "kernel_size": 15
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "kernel_size": 21
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "kernel_size": 27
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "kernel_size": 15
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "kernel_size": 21
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "kernel_size": 27
+    }
+  ],
   "tolerance": 0.0001,
   "init": {
     "input_image": "uniform[0,255]"

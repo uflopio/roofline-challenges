@@ -5,7 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "N*N"
       ]
     },
     {
@@ -48,5 +48,7 @@
   ],
   "tolerance": 0,
   "is_exact": true,
-  "init": {}
+  "init": {
+    "d_adj_matrix": "uniform_int[0,100]"
+  }
 }

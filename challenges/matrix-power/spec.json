@@ -5,31 +5,48 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "size*size"
       ]
     },
     {
       "name": "n",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "N"
+      "value": "n"
     },
     {
       "name": "output_matrix",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N"
+        "size*size"
       ]
     },
     {
       "name": "size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "SIZE"
+      "value": "size"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "size": 512,
+      "n": 2
+    },
+    {
+      "size": 1024,
+      "n": 2
+    },
+    {
+      "size": 2048,
+      "n": 4
+    },
+    {
+      "size": 1024,
+      "n": 8
+    }
+  ],
   "tolerance": 0.001,
   "init": {
     "input_matrix": "normal[0,1]"

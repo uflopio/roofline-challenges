@@ -20,13 +20,13 @@
       "name": "n",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "M"
+      "value": "N"
     },
     {
       "name": "m",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "N"
+      "value": "M"
     }
   ],
   "sizes": [
