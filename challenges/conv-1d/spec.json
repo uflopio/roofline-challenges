@@ -1,0 +1,63 @@
+{
+  "signature": [
+    {
+      "name": "A",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N*K"
+      ]
+    },
+    {
+      "name": "B",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N*K"
+      ]
+    },
+    {
+      "name": "C",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N*K"
+      ]
+    },
+    {
+      "name": "N",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    },
+    {
+      "name": "K",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "K"
+    }
+  ],
+  "sizes": [
+    {
+      "N": 65536,
+      "K": 8191
+    },
+    {
+      "N": 32768,
+      "K": 8191
+    },
+    {
+      "N": 131072,
+      "K": 8191
+    },
+    {
+      "N": 524288,
+      "K": 8191
+    }
+  ],
+  "tolerance": 0.005,
+  "init": {
+    "A": "uniform[-1,1]",
+    "B": "uniform[-1,1]"
+  }
+}

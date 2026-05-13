@@ -1,0 +1,39 @@
+---
+slug: leaky-relu
+title: Leaky ReLU
+difficulty: EASY
+ranked: false
+tags: [activation-function]
+---
+
+Perform the Leaky ReLU (Leaky Rectified Linear Unit) activation function on an input matrix:
+$$
+C[i][j] = \max(\alpha \cdot A[i][j], A[i][j])
+$$
+where $\alpha$ is a small positive constant (e.g. 0.01)
+
+The Leaky ReLU function is defined as:
+$$
+f(x) = \begin{cases}
+x & \text{if } x > 0 \\
+\alpha x & \text{if } x \leq 0
+\end{cases}
+$$
+
+## Input
+- Matrix $A$ of size $M \times N$
+- $\alpha$ value (slope for negative values)
+
+## Output
+- Matrix $C$ of size $M \times N$
+
+## Sizes
+
+- 4096x4096, alpha=0.01
+- 4096x4096, alpha=0.05
+- 4096x4096, alpha=0.1
+- 4096x4096, alpha=0.2
+- 6144x4096, alpha=0.01
+- 6144x4096, alpha=0.05
+- 6144x4096, alpha=0.1
+- 6144x4096, alpha=0.2

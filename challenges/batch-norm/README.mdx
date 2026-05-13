@@ -1,0 +1,29 @@
+---
+slug: batch-norm
+title: Batch Normalization
+difficulty: MEDIUM
+ranked: false
+tags: [normalization]
+---
+
+Implement Batch Normalization over the batch dimension (B) for each feature channel in a 4D tensor.
+
+The formula for Batch Normalization is:
+$$
+\text{y} = \frac{x - \mathrm{E}[x]}{\sqrt{\mathrm{Var}[x] + \epsilon}}
+$$
+where the mean $\mathrm{E}[x]$ and variance $\mathrm{Var}[x]$ are computed over the batch dimension (B) for each feature channel independently. $\epsilon$ is a small value added to the variance for numerical stability.
+
+## Input
+- Tensor $X$ of shape $(B, F, \text{D1}, \text{D2})$ (input data)
+- Epsilon $\epsilon$ (a small float, typically 1e-5)
+
+## Output
+- Tensor $Y$ of shape $(B, F, \text{D1}, \text{D2})$ (normalized data)
+
+## Sizes
+
+- $B = 16, F = 64, D1 = 2^{8}, D2 = 2^{8}$
+- $B = 32, F = 128, D1 = 128, D2 = 128$
+- $B = 8, F = 2^{8}, D1 = 64, D2 = 64$
+- $B = 4, F = 32, D1 = 2^{9}, D2 = 2^{9}$

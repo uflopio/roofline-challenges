@@ -1,0 +1,37 @@
+---
+slug: gemm-relu
+title: GEMM with Bias and ReLU
+difficulty: MEDIUM
+ranked: false
+tags: [matmul, activation-function, fused]
+---
+
+Perform a matrix multiplication followed by bias addition and ReLU activation:
+$$
+C = \text{ReLU}(A \cdot W^T + \text{b})
+$$
+
+The ReLU (Rectified Linear Unit) activation function is defined as:
+$$
+f(x) = \begin{cases}
+x & \text{if } x > 0 \\
+0 & \text{if } x \leq 0
+\end{cases}
+$$
+
+## Input
+- Matrix $A$ of size $B \times N$ corresponding to `batch_size x input_features`
+- Matrix $W$ of size $M \times N$ (weights)
+- Vector $\text{b}$ of size $M$ (bias)
+
+## Output
+- Matrix $C$ of size $B \times M$
+
+## Sizes
+
+- $B = 2^{9}, N = 6144, M = 2^{10}$
+- $B = 2^{9}, N = 2^{13}, M = 2^{10}$
+- $B = 2^{9}, N = 2^{13}, M = 2^{11}$
+- $B = 2^{10}, N = 2^{11}, M = 2^{11}$
+- $B = 2^{10}, N = 2^{12}, M = 2^{11}$
+- $B = 2^{10}, N = 2^{12}, M = 2^{12}$

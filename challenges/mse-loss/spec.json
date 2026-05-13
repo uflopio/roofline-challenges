@@ -1,0 +1,58 @@
+{
+  "signature": [
+    {
+      "name": "predictions",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "targets",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "shape",
+      "kind": "in",
+      "dtype": "i32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "ndim",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "torch.tensor(list(test_case[\"shape\""
+    }
+  ],
+  "sizes": [
+    {
+      "M": 4096,
+      "N": 4096
+    },
+    {
+      "M": 8192,
+      "N": 8192
+    }
+  ],
+  "tolerance": 0.0001,
+  "init": {
+    "predictions": "normal[0,1]",
+    "targets": "normal[0,1]",
+    "shape": "normal[0,1]"
+  }
+}

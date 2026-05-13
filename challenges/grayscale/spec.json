@@ -1,0 +1,43 @@
+{
+  "signature": [
+    {
+      "name": "rgb_image",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "grayscale_output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "height",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "height"
+    },
+    {
+      "name": "width",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "width"
+    },
+    {
+      "name": "channels",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "channels"
+    }
+  ],
+  "sizes": [],
+  "tolerance": 1e-05,
+  "init": {
+    "rgb_image": "uniform[0,255]"
+  }
+}

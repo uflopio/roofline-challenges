@@ -1,0 +1,36 @@
+---
+slug: max-pool-3d
+title: 3D Max Pooling
+difficulty: HARD
+ranked: false
+tags: [pooling]
+---
+
+Perform 3D max pooling on an input tensor:
+$$
+\text{output}[i,j,k] = \max_{m=0,n=0,o=0}^{k-1,k-1,k-1} \text{input}[S \cdot i + D \cdot m - P, S \cdot j + D \cdot n - P, S \cdot k + o - P]
+$$
+
+The max pooling operation slides a window of size $k \times k$ over the input tensor with stride $S$, dilation $D$, and padding $P$, computing the maximum value within each window position.
+
+## Input
+- Matrix `input` of size $H \times W \times D$ (input tensor)
+- `kernel_size` ($k$): Size of the pooling window
+- `stride` ($S$): Step size between window positions
+- `padding` ($P$): Number of zero-padding elements added on all sides
+- `dilation` ($D$): Spacing between kernel elements
+
+## Output
+- Matrix `output` of size $H_{\text{out}} \times W_{\text{out}} \times D_{\text{out}}$ where:
+  $$H_{\text{out}} = \left\lfloor\frac{H + 2P - D(k-1) - 1}{S}\right\rfloor + 1$$
+  $$W_{\text{out}} = \left\lfloor\frac{W + 2P - D(k-1) - 1}{S}\right\rfloor + 1$$
+  $$D_{\text{out}} = \left\lfloor\frac{D + 2P - D(k-1) - 1}{S}\right\rfloor + 1$$
+
+## Sizes
+
+- $KERNEL_SIZE = 2^{8}, STRIDE = 2^{8}, PADDING = 2^{8}, DILATION = 2, H = 2, W = 0, D = 2$
+- $KERNEL_SIZE = 2^{9}, STRIDE = 2^{9}, PADDING = 2^{9}, DILATION = 3, H = 2, W = 1, D = 1$
+- $KERNEL_SIZE = 2^{10}, STRIDE = 2^{10}, PADDING = 2^{10}, DILATION = 4, H = 4, W = 2, D = 1$
+- $KERNEL_SIZE = 2^{9}, STRIDE = 2^{9}, PADDING = 2^{9}, DILATION = 3, H = 3, W = 1, D = 3$
+- $KERNEL_SIZE = 2^{10}, STRIDE = 2^{10}, PADDING = 2^{10}, DILATION = 5, H = 2, W = 2, D = 2$
+- $KERNEL_SIZE = 2^{10}, STRIDE = 2^{10}, PADDING = 2^{10}, DILATION = 7, H = 3, W = 3, D = 1$

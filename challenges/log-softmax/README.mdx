@@ -1,0 +1,33 @@
+---
+slug: log-softmax
+title: Log Softmax
+difficulty: EASY
+ranked: false
+tags: [activation-function]
+---
+
+Perform the Log-Softmax activation function on an input matrix row-wise:
+
+$$
+\text{output}[i][j] = \log\left(\frac{e^{\text{input}[i][j]}}{\sum_{k=0}^{N-1} e^{\text{input}[i][k]}}\right)
+$$
+
+which simplifies to:
+
+$$
+\text{output}[i][j] = \text{input}[i][j] - \log\left(\sum_{k=0}^{N-1} e^{\text{input}[i][k]}\right)
+$$
+
+## Input
+- Matrix `input` of size $M \times N$ containing floating-point values
+
+## Output
+- Matrix `output` of size $M \times N$ containing the log-softmax values
+
+## Sizes
+
+- $M = 2^{12}, N = 2^{12}$
+- $M = 6144, N = 2^{12}$
+- $M = 2^{12}, N = 7168$
+- $M = 2^{12}, N = 2^{13}$
+- $M = 2^{13}, N = 2^{13}$

@@ -1,0 +1,33 @@
+---
+slug: avg-pool-1d
+title: 1D Average Pooling
+difficulty: EASY
+ranked: false
+tags: [pooling]
+---
+
+Perform 1D average pooling on an input tensor:
+$$
+\text{output}[i] = \frac{1}{k}\sum_{m=0}^{k-1} \text{input}[S \cdot i + m - P]
+$$
+
+The average pooling operation slides a window of size $k$ over the input tensor with stride $S$ and padding $P$, computing the average value within each window position.
+
+## Input
+- Matrix `input` of size $H$ (input tensor)
+- `kernel_size` ($k$): Size of the pooling window
+- `stride` ($S$): Step size between window positions
+- `padding` ($P$): Number of zero-padding elements added on all sides
+
+## Output
+- Matrix `output` of size $H_{\text{out}}$ where:
+  $$H_{\text{out}} = \left\lfloor\frac{H + 2P - k}{S} + 1\right\rfloor$$
+
+## Sizes
+
+- H=2097152, K=7, S=4, P=3
+- H=4194304, K=2, S=1, P=0
+- H=8388608, K=3, S=2, P=1
+- H=16777216, K=4, S=2, P=1
+- H=33554432, K=3, S=1, P=1
+- H=67108864, K=5, S=3, P=2

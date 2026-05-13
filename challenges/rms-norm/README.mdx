@@ -1,0 +1,30 @@
+---
+slug: rms-norm
+title: RMS Normalization
+difficulty: EASY
+ranked: false
+tags: [normalization]
+---
+
+Implement RMS (Root Mean Square) Normalization for a 2D tensor.
+
+Normalize the input by dividing each element by the root mean square of the features in each sample. More formally, compute:
+
+$$
+\text{y} = \frac{x}{\sqrt{\text{mean}(x^2) + \epsilon}}
+$$
+
+where the mean is computed along the feature dimension for each sample in the batch independently. $\epsilon$ is a small value added to the denominator for numerical stability.
+
+## Input
+- Tensor $X$ of shape $(B, N)$ is the input data where $B$ = batch size and $N$ = number of features
+
+## Output
+- Tensor $Y$ with the same shape as input (normalized data)
+
+## Sizes
+
+- $B = 2^{10}, N = 2^{10}$
+- $B = 2^{10}, N = 2^{12}$
+- $B = 2^{11}, N = 2^{13}$
+- $B = 2^{9}, N = 2^{14}$

@@ -1,0 +1,58 @@
+{
+  "signature": [
+    {
+      "name": "input",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "output",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "M*N"
+      ]
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "M"
+    },
+    {
+      "name": "m",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
+  ],
+  "sizes": [
+    {
+      "M": 4096,
+      "N": 4096
+    },
+    {
+      "M": 6144,
+      "N": 4096
+    },
+    {
+      "M": 4096,
+      "N": 7168
+    },
+    {
+      "M": 4096,
+      "N": 8192
+    },
+    {
+      "M": 8192,
+      "N": 8192
+    }
+  ],
+  "tolerance": 8e-05,
+  "init": {
+    "input": "uniform[-1,1]"
+  }
+}

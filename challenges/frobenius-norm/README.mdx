@@ -1,0 +1,35 @@
+---
+slug: frobenius-norm
+title: Frobenius Normalization
+difficulty: EASY
+ranked: false
+tags: [normalization]
+---
+
+Implement Frobenius Normalization for a tensor of arbitrary shape.
+
+The Frobenius Normalization of a tensor involves dividing each element by the Frobenius norm of the entire tensor.
+
+$$
+\text{y} = \frac{x}{\|x\|_F}
+$$
+
+where $\|x\|_F$ is the Frobenius norm, which is calculated as:
+
+$$
+\|x\|_F = \sqrt{\sum_{i} x_i^2}
+$$
+
+where $i$ iterates through all elements of the tensor.
+
+## Input
+- Tensor $X$ of arbitrary shape (input data)
+- Total number of elements in the tensor (size)
+
+## Output
+- Tensor $Y$ with the same shape as input (normalized data)
+
+## Sizes
+
+- $M = 4, N = 2^{10}, K = 2^{10}$
+- $M = 32, N = 128, K = 128$

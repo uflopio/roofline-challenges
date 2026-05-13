@@ -1,0 +1,43 @@
+{
+  "signature": [
+    {
+      "name": "A",
+      "kind": "in",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "min_weight",
+      "kind": "out",
+      "dtype": "f32",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "dtype": "i32",
+      "value": "N"
+    }
+  ],
+  "sizes": [
+    {
+      "N": 1024
+    },
+    {
+      "N": 2048
+    },
+    {
+      "N": 4096
+    },
+    {
+      "N": 6144
+    }
+  ],
+  "tolerance": 0,
+  "is_exact": true,
+  "init": {}
+}
