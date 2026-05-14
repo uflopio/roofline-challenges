@@ -2,7 +2,7 @@
 slug: l2-norm
 title: L2 Norm
 difficulty: EASY
-ranked: true
+ranked: false
 tags: [reduction, vector, memory-bound]
 supporterOnly: false
 spec:
