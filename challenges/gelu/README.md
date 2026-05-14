@@ -7,9 +7,6 @@ tags: [vector, memory-bound, intro, activation]
 spec:
   tolerance: 0.0001
   signature:
-  - name: n
-    kind: const
-    dtype: i32
   - name: x
     kind: in
     dtype: f32
@@ -19,6 +16,9 @@ spec:
     kind: out
     dtype: f32
     shape: n
+  - name: n
+    kind: const
+    dtype: i32
   inputs:
   - n: 4194304
   - n: 8388608
