@@ -33,6 +33,7 @@ The list below describes the stylistic criteria to keep in mind when designing p
 - The problem _may_ expect results within some numerical tolerance.
 - The problem _must_ expect the datatype with the same precision for input as for output and vice versa.  
 - The problem _must_ come with a reference implementation used for correctness checking.
+- The problem _must not_ use `long double`.
 
 ### Text
 
@@ -52,7 +53,7 @@ The list below describes the stylistic criteria to keep in mind when designing p
 - The text _should_ use implicit multiplication $ab$ over "$a \cdot b$" or "$a \times b$."
 - The text _must_ use $4 \text{ mod } 3$ instead of `4 % 3` to talk about modular arithmetic.
 
-- The text _must_ use capitals for hyper-parameters and constants that don't change across runs of the family of algorithms, like $N$, $X$ or $Q$.
+- The text _must_ use a different family of letters for constants than it does for inputs. If the inputs are $\underline{a}$ and $\underline{b}$, the constant must not be $c$, but can be $n$.
 <!-- vale write-good.E-Prime = NO -->
 <!-- vale write-good.Passive = NO -->
 - The text _should_ pose the problems in terms that do not hint at how it can be accelerated in hardware.
