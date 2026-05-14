@@ -52,7 +52,7 @@ Compute the dense matrix multiplication $C = AB$.
 Given matrices $A$ of shape $M \times K$ and $B$ of shape $K \times N$, produce matrix $C$ of shape $M \times N$ such that
 
 $$
-C_{i,j} = \sum_{k=0}^{K-1} A_{i,k} \cdot B_{k,j}.
+C_{ij} = \sum_{k}^{K} A_{ik} \cdot B_{kj}
 $$
 
 All matrices are stored in row-major order.
