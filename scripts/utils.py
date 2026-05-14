@@ -104,24 +104,34 @@ def generate_cuda_snippet(spec: dict) -> str:
         "i64": "long long",
         "u32": "unsigned int",
         "u64": "unsigned long long",
+        "bool": "bool"
     }
 
     sig = spec.get("signature", [])
 
-    def cpp_type(entry):
-        dt = dtype_map.get(entry["dtype"], entry["dtype"])
+    def cpp_type(entry: dict):
+        dtype = entry["dtype"]
+        is_ptr = False
+        if dtype.endswith('*'):
+            dtype = dtype[:-1]
+            is_ptr = True
+
+        dt = dtype_map.get(dtype, dtype)
+        if not dt:
+            raise
 
         shape = entry.get("shape", None)
         if shape:
             return f"const {dt}*" if entry["kind"] == "in" else f"{dt}*"
-        return dt
 
-    kind_order = {"in": 0, "inout": 1, "out": 2, "const": 3}
-    sig_sorted = sorted(sig, key=lambda x: kind_order.get(x["kind"], 99))
+        if is_ptr:
+            dt = dt + "*"
+
+        return dt
 
     args = []
 
-    for entry in sig_sorted:
+    for entry in sig:
         name = entry["name"]
         kind = entry["kind"]
         ctype = cpp_type(entry)
