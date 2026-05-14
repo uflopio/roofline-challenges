@@ -40,8 +40,7 @@ spec:
 Compute the argmax of a tensor over dim.
 
 Find the indices of maximum values along a specified dimension of an input tensor:
-\text{output}[i_1, \dots, i_{d-1}, i_{d+1}, \dots, i_n] = \underset{i_d}{\arg\max} \; \text{input}[i_1, \dots, i_d, \dots, i_n]
-
+$\text{output}[i_1, \dots, i_{d-1}, i_{d+1}, \dots, i_n] = \operatorname*{arg\,max}_{i_d} \text{input}[i_1, \dots, i_d, \dots, i_n]$
 where dd is the dimension to perform argmax over, nn is the number of dimensions.
 
 $$
