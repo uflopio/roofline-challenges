@@ -5,7 +5,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "b*i*j*k"
+        "b",
+        "i",
+        "j",
+        "k"
       ]
     },
     {
@@ -13,7 +16,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "b*i*k*l"
+        "b",
+        "i",
+        "k",
+        "l"
       ]
     },
     {
@@ -21,7 +27,10 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "b*i*j*l"
+        "b",
+        "i",
+        "j",
+        "l"
       ]
     },
     {

@@ -5,7 +5,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "height*width*channels"
+        "height",
+        "width",
+        "channels"
       ]
     },
     {
@@ -13,7 +15,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "height*width"
+        "height",
+        "width"
       ]
     },
     {

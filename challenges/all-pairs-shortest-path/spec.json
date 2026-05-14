@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "n*n"
+        "n",
+        "n"
       ]
     },
     {
@@ -13,7 +14,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "n*n"
+        "n",
+        "n"
       ]
     },
     {

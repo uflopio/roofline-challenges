@@ -5,7 +5,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {
@@ -31,7 +33,9 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {

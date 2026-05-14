@@ -5,7 +5,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "size*size*size"
+        "size",
+        "size",
+        "size"
       ]
     },
     {
@@ -13,7 +15,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "K*K*K"
+        "K",
+        "K",
+        "K"
       ]
     },
     {
@@ -21,7 +25,9 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "size*size*size"
+        "size",
+        "size",
+        "size"
       ]
     },
     {

@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "height*width"
+        "height",
+        "width"
       ]
     },
     {

@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "batch_size*in_features"
+        "batch_size",
+        "in_features"
       ]
     },
     {
@@ -13,7 +14,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "in_features*out_features"
+        "in_features",
+        "out_features"
       ]
     },
     {
@@ -35,7 +37,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "batch_size*out_features"
+        "batch_size",
+        "out_features"
       ]
     },
     {

@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "H*W"
+        "H",
+        "W"
       ]
     },
     {
@@ -31,7 +32,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "H*W"
+        "H",
+        "W"
       ]
     },
     {

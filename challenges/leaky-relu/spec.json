@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "M",
+        "N"
       ]
     },
     {
@@ -19,7 +20,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "M",
+        "N"
       ]
     },
     {
