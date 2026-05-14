@@ -3,3 +3,4 @@
 .challenges-cache/
 __pycache__
 challenges/*/templates/cuda.cu
+challenges/*/tests/*
