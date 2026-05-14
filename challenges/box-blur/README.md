@@ -8,15 +8,6 @@ supporterOnly: false
 spec:
   tolerance: 0.0001
   signature:
-  - name: height
-    kind: const
-    dtype: i32
-  - name: width
-    kind: const
-    dtype: i32
-  - name: kernel_size
-    kind: const
-    dtype: i32
   - name: input_image
     kind: in
     dtype: f32
@@ -30,6 +21,15 @@ spec:
     shape:
     - height
     - width
+  - name: height
+    kind: const
+    dtype: i32
+  - name: width
+    kind: const
+    dtype: i32
+  - name: kernel_size
+    kind: const
+    dtype: i32
   inputs:
   - height: 2560
     width: 1440
