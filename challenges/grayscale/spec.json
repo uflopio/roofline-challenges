@@ -5,7 +5,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height",
+        "width",
+        "channels"
       ]
     },
     {
@@ -13,7 +15,8 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height",
+        "width"
       ]
     },
     {
@@ -35,7 +38,23 @@
       "value": "channels"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "height": 2560,
+      "width": 1440,
+      "channels": 3
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "channels": 3
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "channels": 3
+    }
+  ],
   "tolerance": 1e-05,
   "init": {
     "rgb_image": "uniform[0,255]"

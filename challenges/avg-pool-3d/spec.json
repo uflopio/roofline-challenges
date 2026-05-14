@@ -5,33 +5,37 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "KERNEL_SIZE*STRIDE*PADDING*H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {
       "name": "kernel_size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "test_case[\"height\""
+      "value": "kernel_size"
     },
     {
       "name": "stride",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "STRIDE"
+      "value": "stride"
     },
     {
       "name": "padding",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "PADDING"
+      "value": "padding"
     },
     {
       "name": "output",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "KERNEL_SIZE*STRIDE*PADDING*H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {
@@ -55,44 +59,36 @@
   ],
   "sizes": [
     {
-      "KERNEL_SIZE": 192,
-      "STRIDE": 192,
-      "PADDING": 192,
-      "H": 5,
-      "W": 2,
-      "D": 2
+      "H": 128,
+      "W": 128,
+      "D": 128,
+      "kernel_size": 3,
+      "stride": 1,
+      "padding": 1
     },
     {
-      "KERNEL_SIZE": 224,
-      "STRIDE": 224,
-      "PADDING": 224,
-      "H": 7,
-      "W": 3,
-      "D": 3
+      "H": 256,
+      "W": 256,
+      "D": 256,
+      "kernel_size": 4,
+      "stride": 2,
+      "padding": 1
     },
     {
-      "KERNEL_SIZE": 512,
-      "STRIDE": 512,
-      "PADDING": 512,
-      "H": 3,
-      "W": 3,
-      "D": 1
+      "H": 384,
+      "W": 384,
+      "D": 384,
+      "kernel_size": 3,
+      "stride": 2,
+      "padding": 1
     },
     {
-      "KERNEL_SIZE": 784,
-      "STRIDE": 784,
-      "PADDING": 784,
-      "H": 5,
-      "W": 2,
-      "D": 2
-    },
-    {
-      "KERNEL_SIZE": 1024,
-      "STRIDE": 1024,
-      "PADDING": 1024,
-      "H": 3,
-      "W": 3,
-      "D": 1
+      "H": 512,
+      "W": 512,
+      "D": 512,
+      "kernel_size": 5,
+      "stride": 3,
+      "padding": 2
     }
   ],
   "tolerance": 1e-05,

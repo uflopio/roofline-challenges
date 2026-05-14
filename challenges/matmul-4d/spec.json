@@ -5,7 +5,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*I*J*L*K"
+        "b",
+        "i",
+        "j",
+        "k"
       ]
     },
     {
@@ -13,7 +16,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*I*J*L*K"
+        "b",
+        "i",
+        "k",
+        "l"
       ]
     },
     {
@@ -21,38 +27,41 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "B*I*J*L*K"
+        "b",
+        "i",
+        "j",
+        "l"
       ]
     },
     {
       "name": "b",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "b"
+      "value": "B"
     },
     {
       "name": "i",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "i"
+      "value": "I"
     },
     {
       "name": "j",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "j"
+      "value": "J"
     },
     {
       "name": "l",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "l"
+      "value": "L"
     },
     {
       "name": "k",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "k"
+      "value": "K"
     }
   ],
   "sizes": [

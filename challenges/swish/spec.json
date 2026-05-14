@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "M",
+        "N"
       ]
     },
     {
@@ -13,20 +14,21 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "M*N"
+        "M",
+        "N"
       ]
     },
     {
       "name": "n",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "M"
+      "value": "N"
     },
     {
       "name": "m",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "N"
+      "value": "M"
     }
   ],
   "sizes": [

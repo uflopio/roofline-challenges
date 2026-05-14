@@ -2,8 +2,9 @@
 slug: box-blur
 title: Box Blur
 difficulty: EASY
-ranked: false
+ranked: true
 tags: [graphics, convolution]
+supporterOnly: false
 ---
 
 Apply a box blur filter to a grayscale image by averaging pixels in a square neighborhood:
@@ -25,9 +26,5 @@ This creates a blurring effect by smoothing out pixel values. The larger the ker
 
 ## Sizes
 
-- 1920x1080, kernel=15x15
-- 1920x1080, kernel=21x21
-- 1920x1080, kernel=27x27
-- 2048x2048, kernel=15x15
-- 2048x2048, kernel=21x21
-- 2048x2048, kernel=27x27
+- $KERNEL_SIZE = 1920, HEIGHT = 1080$
+- $KERNEL_SIZE = 2^{11}, HEIGHT = 2^{11}$

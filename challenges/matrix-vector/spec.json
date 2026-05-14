@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*K"
+        "M",
+        "K"
       ]
     },
     {
@@ -13,7 +14,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*K"
+        "K"
       ]
     },
     {
@@ -21,7 +22,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "M*K"
+        "M"
       ]
     },
     {

@@ -5,39 +5,43 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "KERNEL_SIZE*STRIDE*PADDING*DILATION*H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {
       "name": "kernel_size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "test_case[\"height\""
+      "value": "kernel_size"
     },
     {
       "name": "stride",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "STRIDE"
+      "value": "stride"
     },
     {
       "name": "padding",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "PADDING"
+      "value": "padding"
     },
     {
       "name": "dilation",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "DILATION"
+      "value": "dilation"
     },
     {
       "name": "output",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "KERNEL_SIZE*STRIDE*PADDING*DILATION*H*W*D"
+        "H",
+        "W",
+        "D"
       ]
     },
     {
@@ -61,58 +65,40 @@
   ],
   "sizes": [
     {
-      "KERNEL_SIZE": 256,
-      "STRIDE": 256,
-      "PADDING": 256,
-      "DILATION": 2,
-      "H": 2,
-      "W": 0,
-      "D": 2
+      "H": 128,
+      "W": 128,
+      "D": 128,
+      "kernel_size": 3,
+      "stride": 1,
+      "padding": 1,
+      "dilation": 1
     },
     {
-      "KERNEL_SIZE": 512,
-      "STRIDE": 512,
-      "PADDING": 512,
-      "DILATION": 3,
-      "H": 2,
-      "W": 1,
-      "D": 1
+      "H": 256,
+      "W": 256,
+      "D": 256,
+      "kernel_size": 4,
+      "stride": 2,
+      "padding": 1,
+      "dilation": 1
     },
     {
-      "KERNEL_SIZE": 1024,
-      "STRIDE": 1024,
-      "PADDING": 1024,
-      "DILATION": 4,
-      "H": 4,
-      "W": 2,
-      "D": 1
+      "H": 384,
+      "W": 384,
+      "D": 384,
+      "kernel_size": 3,
+      "stride": 2,
+      "padding": 1,
+      "dilation": 2
     },
     {
-      "KERNEL_SIZE": 512,
-      "STRIDE": 512,
-      "PADDING": 512,
-      "DILATION": 3,
-      "H": 3,
-      "W": 1,
-      "D": 3
-    },
-    {
-      "KERNEL_SIZE": 1024,
-      "STRIDE": 1024,
-      "PADDING": 1024,
-      "DILATION": 5,
-      "H": 2,
-      "W": 2,
-      "D": 2
-    },
-    {
-      "KERNEL_SIZE": 1024,
-      "STRIDE": 1024,
-      "PADDING": 1024,
-      "DILATION": 7,
-      "H": 3,
-      "W": 3,
-      "D": 1
+      "H": 512,
+      "W": 512,
+      "D": 512,
+      "kernel_size": 5,
+      "stride": 3,
+      "padding": 2,
+      "dilation": 1
     }
   ],
   "tolerance": 9e-05,

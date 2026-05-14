@@ -5,7 +5,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*H*S*E"
+        "B",
+        "H",
+        "S",
+        "E"
       ]
     },
     {
@@ -13,7 +16,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*H*S*E"
+        "B",
+        "H",
+        "S",
+        "E"
       ]
     },
     {
@@ -21,7 +27,10 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*H*S*E"
+        "B",
+        "H",
+        "S",
+        "E"
       ]
     },
     {
@@ -29,7 +38,10 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "B*H*S*E"
+        "B",
+        "H",
+        "S",
+        "E"
       ]
     },
     {

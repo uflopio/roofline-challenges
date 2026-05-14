@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "B*D"
+        "B",
+        "D"
       ]
     },
     {
@@ -13,7 +14,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "B*D"
+        "B"
       ]
     },
     {

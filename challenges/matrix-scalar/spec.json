@@ -11,8 +11,8 @@
     {
       "name": "scalar",
       "kind": "scalar",
-      "dtype": "i32",
-      "value": "N"
+      "dtype": "f32",
+      "value": "scalar"
     },
     {
       "name": "output_matrix",
@@ -29,7 +29,24 @@
       "value": "N"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "N": 67108864,
+      "scalar": 0.1
+    },
+    {
+      "N": 67108864,
+      "scalar": -0.3
+    },
+    {
+      "N": 84934656,
+      "scalar": 0.4
+    },
+    {
+      "N": 84934656,
+      "scalar": -0.5
+    }
+  ],
   "tolerance": 7e-06,
   "init": {
     "input_matrix": "uniform[-1,1]"

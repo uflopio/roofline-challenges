@@ -4,6 +4,7 @@ title: Huber Loss
 difficulty: EASY
 ranked: false
 tags: [loss-function]
+supporterOnly: true
 ---
 
 Compute the element-wise Huber Loss (specifically, Smooth L1 Loss, which is Huber Loss with $\delta=1$) between two input tensors, `predictions` and `targets`.
@@ -35,7 +36,7 @@ $$
 
 ## Sizes
 
-- N=1048576
-- N=4194304
-- N=16777216
-- N=67108864
+- $N = 2^{20}$
+- $N = 2^{22}$
+- $N = 2^{24}$
+- $N = 2^{26}$

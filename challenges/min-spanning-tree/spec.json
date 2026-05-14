@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "n",
+        "n"
       ]
     },
     {
@@ -13,7 +14,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N"
+        "1"
       ]
     },
     {
@@ -39,5 +40,7 @@
   ],
   "tolerance": 0,
   "is_exact": true,
-  "init": {}
+  "init": {
+    "A": "uniform_int[0,100]"
+  }
 }

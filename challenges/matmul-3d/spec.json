@@ -5,7 +5,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N*M*K*L"
+        "n",
+        "m",
+        "k"
       ]
     },
     {
@@ -13,7 +15,9 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N*M*K*L"
+        "n",
+        "k",
+        "l"
       ]
     },
     {
@@ -21,7 +25,9 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N*M*K*L"
+        "n",
+        "m",
+        "l"
       ]
     },
     {

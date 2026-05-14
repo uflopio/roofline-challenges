@@ -5,7 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "M*N*K"
+        "size"
       ]
     },
     {
@@ -13,26 +13,28 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "M*N*K"
+        "1"
       ]
     },
     {
       "name": "size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "total_elements"
+      "value": "size"
     }
   ],
   "sizes": [
     {
-      "M": 4,
-      "N": 1024,
-      "K": 1024
+      "size": 4194304
     },
     {
-      "M": 32,
-      "N": 128,
-      "K": 128
+      "size": 524288
+    },
+    {
+      "size": 16777216
+    },
+    {
+      "size": 33554432
     }
   ],
   "tolerance": 1e-06,

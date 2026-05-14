@@ -5,40 +5,87 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height",
+        "width"
       ]
     },
     {
       "name": "num_bins",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "height"
+      "value": "num_bins"
     },
     {
       "name": "histogram",
       "kind": "out",
-      "dtype": "f32",
+      "dtype": "i32",
       "shape": [
-        "N"
+        "num_bins"
       ]
     },
     {
       "name": "height",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "width"
+      "value": "height"
     },
     {
       "name": "width",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "WIDTH"
+      "value": "width"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "height": 2560,
+      "width": 1440,
+      "num_bins": 64
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "num_bins": 128
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "num_bins": 256
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "num_bins": 64
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "num_bins": 128
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "num_bins": 256
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "num_bins": 64
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "num_bins": 128
+    },
+    {
+      "height": 4096,
+      "width": 4096,
+      "num_bins": 256
+    }
+  ],
   "tolerance": 0,
   "is_exact": true,
   "init": {
-    "image": "uniform[0,1]"
+    "image": "uniform_int[0,255]"
   }
 }

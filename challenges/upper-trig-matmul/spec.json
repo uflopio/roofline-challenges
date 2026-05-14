@@ -5,6 +5,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
+        "N",
         "N"
       ]
     },
@@ -13,6 +14,7 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
+        "N",
         "N"
       ]
     },
@@ -21,6 +23,7 @@
       "kind": "out",
       "dtype": "f32",
       "shape": [
+        "N",
         "N"
       ]
     },

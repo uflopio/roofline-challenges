@@ -5,37 +5,70 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height",
+        "width"
       ]
     },
     {
       "name": "threshold_value",
       "kind": "scalar",
-      "dtype": "i32",
-      "value": "height"
+      "dtype": "f32",
+      "value": "threshold_value"
     },
     {
       "name": "output_image",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "N"
+        "height",
+        "width"
       ]
     },
     {
       "name": "height",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "width"
+      "value": "height"
     },
     {
       "name": "width",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "WIDTH"
+      "value": "width"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "height": 2560,
+      "width": 1440,
+      "threshold_value": 64.0
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "threshold_value": 128.0
+    },
+    {
+      "height": 2560,
+      "width": 1440,
+      "threshold_value": 192.0
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "threshold_value": 64.0
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "threshold_value": 128.0
+    },
+    {
+      "height": 2048,
+      "width": 2048,
+      "threshold_value": 192.0
+    }
+  ],
   "tolerance": 0,
   "is_exact": true,
   "init": {

@@ -5,20 +5,22 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
+        "M",
         "N"
       ]
     },
     {
       "name": "alpha",
       "kind": "scalar",
-      "dtype": "i32",
-      "value": "M"
+      "dtype": "f32",
+      "value": "alpha"
     },
     {
       "name": "output",
       "kind": "out",
       "dtype": "f32",
       "shape": [
+        "M",
         "N"
       ]
     },
@@ -35,7 +37,28 @@
       "value": "M"
     }
   ],
-  "sizes": [],
+  "sizes": [
+    {
+      "M": 4096,
+      "N": 4096,
+      "alpha": 0.01
+    },
+    {
+      "M": 4096,
+      "N": 4096,
+      "alpha": 0.05
+    },
+    {
+      "M": 8192,
+      "N": 4096,
+      "alpha": 0.1
+    },
+    {
+      "M": 8192,
+      "N": 8192,
+      "alpha": 0.2
+    }
+  ],
   "tolerance": 1e-06,
   "init": {
     "input": "uniform[-1,1]"

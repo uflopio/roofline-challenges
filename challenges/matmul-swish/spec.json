@@ -5,7 +5,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+        "batch_size",
+        "in_features"
       ]
     },
     {
@@ -13,7 +14,8 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+        "in_features",
+        "out_features"
       ]
     },
     {
@@ -21,72 +23,61 @@
       "kind": "in",
       "dtype": "f32",
       "shape": [
-        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+        "out_features"
       ]
     },
     {
       "name": "scaling_factor",
       "kind": "scalar",
-      "dtype": "i32",
-      "value": "test_case[\"batch_size\""
+      "dtype": "f32",
+      "value": "scaling_factor"
     },
     {
       "name": "output",
       "kind": "out",
       "dtype": "f32",
       "shape": [
-        "SCALING_FACTOR*BATCH_SIZE*IN_FEATURES*OUT_FEATURES"
+        "batch_size",
+        "out_features"
       ]
     },
     {
       "name": "batch_size",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "BATCH_SIZE"
+      "value": "batch_size"
     },
     {
       "name": "in_features",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "IN_FEATURES"
+      "value": "in_features"
     },
     {
       "name": "out_features",
       "kind": "scalar",
       "dtype": "i32",
-      "value": "OUT_FEATURES"
+      "value": "out_features"
     }
   ],
   "sizes": [
     {
-      "SCALING_FACTOR": 128,
-      "BATCH_SIZE": 1024,
-      "IN_FEATURES": 512,
-      "OUT_FEATURES": 2
+      "batch_size": 4096,
+      "in_features": 4096,
+      "out_features": 4096,
+      "scaling_factor": 0.5
     },
     {
-      "SCALING_FACTOR": 256,
-      "BATCH_SIZE": 2048,
-      "IN_FEATURES": 1024,
-      "OUT_FEATURES": 1
+      "batch_size": 4096,
+      "in_features": 8192,
+      "out_features": 4096,
+      "scaling_factor": 0.5
     },
     {
-      "SCALING_FACTOR": 64,
-      "BATCH_SIZE": 512,
-      "IN_FEATURES": 256,
-      "OUT_FEATURES": 0
-    },
-    {
-      "SCALING_FACTOR": 512,
-      "BATCH_SIZE": 4096,
-      "IN_FEATURES": 2048,
-      "OUT_FEATURES": 3
-    },
-    {
-      "SCALING_FACTOR": 32,
-      "BATCH_SIZE": 256,
-      "IN_FEATURES": 128,
-      "OUT_FEATURES": 1
+      "batch_size": 8192,
+      "in_features": 4096,
+      "out_features": 8192,
+      "scaling_factor": 0.5
     }
   ],
   "tolerance": 1e-05,

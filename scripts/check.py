@@ -110,36 +110,49 @@ def check_max_input_size(spec) -> int:
     return max_bytes
 
 
+def format_bytes(num_bytes: int, precision: int = 2) -> str:
+    abs_bytes = abs(num_bytes)
+
+    for unit, factor in reversed(_BINARY.items()):
+        if abs_bytes >= factor:
+            value = num_bytes / factor
+            return f"{value:.{precision}f} {unit}"
+
+    return f"{num_bytes} B"
+
+
 def check(label: str, spec: dict) -> bool:
     print(f"Processing {label}...")
     max_bytes = check_max_input_size(spec)
 
     if max_bytes > MAX_SIZE_BYTES:
-        print(f"[ERR] Spec too large: {max_bytes / (1024**2):.2f} Mib > limit")
+        print(
+            f"[ERR] Spec too large: "
+            f"{format_bytes(max_bytes)} > {format_bytes(MAX_SIZE_BYTES)}"
+        )
         return False
-    else:
-        print(f"[OK] Max input size: {max_bytes / (1024**2):.2f} Mib")
 
     return True
 
-
-for dir in [p for p in folder.iterdir() if p.is_dir()]:
-    spec_path = dir / 'spec.json'
-
-    if not spec_path.exists():
-        print(f"Missing spec.json for challenge in `{dir}`")
-        continue
-
-    with open(spec_path) as f:
-        spec = json.load(f)
-
-    label = dir.name
-
+if __name__ == '__main__':
     ok = True
-    try:
-        ok &= check(label, spec)
-    except Exception as e:
-        print(f"Error while processing spec `{dir}`")
-        raise e
+
+    for dir in [p for p in folder.iterdir() if p.is_dir()]:
+        spec_path = dir / 'spec.json'
+
+        if not spec_path.exists():
+            print(f"Missing spec.json for challenge in `{dir}`")
+            continue
+
+        with open(spec_path) as f:
+            spec = json.load(f)
+
+        label = dir.name
+
+        try:
+            ok &= check(label, spec)
+        except Exception as e:
+            print(f"Error while processing spec `{dir}`")
+            raise e
 
     exit(not ok)

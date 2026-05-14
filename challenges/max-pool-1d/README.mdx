@@ -4,6 +4,7 @@ title: 1D Max Pooling
 difficulty: EASY
 ranked: false
 tags: [pooling]
+supporterOnly: true
 ---
 
 Perform 1D max pooling on an input tensor:
@@ -26,9 +27,9 @@ The max pooling operation slides a window of size $k \times k$ over the input te
 
 ## Sizes
 
-- H=2097152, K=7, S=4, P=3, d=1
-- H=4194304, K=2, S=1, P=0, d=1
-- H=8388608, K=3, S=2, P=1, d=1
-- H=16777216, K=4, S=2, P=1, d=2
-- H=33554432, K=3, S=1, P=1, d=1
-- H=67108864, K=5, S=3, P=2, d=1
+- $KERNEL_SIZE = 2^{21}, STRIDE = 7, PADDING = 4, DILATION = 3, H = 1$
+- $KERNEL_SIZE = 2^{22}, STRIDE = 2, PADDING = 1, DILATION = 0, H = 1$
+- $KERNEL_SIZE = 2^{23}, STRIDE = 3, PADDING = 2, DILATION = 1, H = 1$
+- $KERNEL_SIZE = 2^{24}, STRIDE = 4, PADDING = 2, DILATION = 1, H = 2$
+- $KERNEL_SIZE = 2^{25}, STRIDE = 3, PADDING = 1, DILATION = 1, H = 1$
+- $KERNEL_SIZE = 2^{26}, STRIDE = 5, PADDING = 3, DILATION = 2, H = 1$
