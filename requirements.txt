@@ -1,3 +1,4 @@
 simpleeval==1.0.7
 numpy==2.4.4
 pyyaml==6.0.3
+sympy==1.14.0
