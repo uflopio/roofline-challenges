@@ -1,6 +1,6 @@
 #include <cuda_runtime.h>
 
-// Box Blur.
-void solve(const float *input_image, int kernel_size, float *output_image, int height, int width) {
-
+void solve(const float* input_image, float* output_image, int height, int width, int kernel_size) {
+  // Solution goes here.
+  // Keep in mind: the pointers are on the GPU!
 }

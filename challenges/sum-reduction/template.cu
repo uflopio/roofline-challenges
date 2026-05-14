@@ -1,6 +1,6 @@
 #include <cuda_runtime.h>
 
-void solve(const float* A, const float* B, float* C, int m, int n, int k) {
+void solve(const float* a, float s, int n) {
   // Solution goes here.
   // Keep in mind: the pointers are on the GPU!
 }

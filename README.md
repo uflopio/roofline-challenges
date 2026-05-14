@@ -46,6 +46,8 @@ The list below describes the stylistic criteria to keep in mind when designing p
 - The text _should_ use letters from the beginning of the alphabet for matrices, so $A$, $B$, $C$ and so on.
 - The text _should_ use the letters $i$, $j$, $k$ for indexing dimensions 1 to 3.
 - The text _should_ use $\Sigma$- and $\Pi$-notation without specifying a starting iteration number when summing over a vector, so $\Sigma^N_i$ is the same as $\Sigma^{N - 1}_{i=0}$, same as $\Sigma^N_{i=1}$. 
+- The text _should_ use the `\hat{A}` symbol (like in $\hat{A}_{ij} = \max_{ij} A_{ij}$) to denote maximal values.
+- The text _should_ use the `\check{A}` symbol (like in $\check{A} = \min_{ij} A_{ij}$) to denote minimal values.
 
 - The text _must not_ use latex for showing indexing, don't use "$\text{for } i = 0, 1, \dots, N - 1$."
 - The text _should avoid_ set membership for indices, like $i \in [0; N)$, unless the problem statement is more clearly stated mathematically.

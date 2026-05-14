@@ -26,7 +26,12 @@ spec:
   - name: n
     kind: const
     dtype: i32
-    values: ["2**22", "2**23", "2**24", "2**25", "2**26"]
+  inputs:
+  - n: 4194304
+  - n: 8388608
+  - n: 16777216
+  - n: 33554432
+  - n: 67108864
 ---
 
 Given vectors $\underline{a}$ and $\underline{b}$ of length $n$, produce vector $\underline{c}$ of length $n$ such that $c_i = a_i + b_i$.

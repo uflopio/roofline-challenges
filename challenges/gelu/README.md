@@ -10,7 +10,6 @@ spec:
   - name: n
     kind: const
     dtype: i32
-    values: ["2**22", "2**23", "2**24", "2**25", "2**26"]
   - name: x
     kind: in
     dtype: f32
@@ -20,6 +19,12 @@ spec:
     kind: out
     dtype: f32
     shape: n
+  inputs:
+  - n: 4194304
+  - n: 8388608
+  - n: 16777216
+  - n: 33554432
+  - n: 67108864
 ---
 
 Given vector $\underline{x}$ of length $n$, produce vector $\underline{y}$ of length $n$ such that, with $i$ indexing over $n$, 

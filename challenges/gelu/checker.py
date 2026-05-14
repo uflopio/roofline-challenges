@@ -6,5 +6,4 @@ def gelu(x):
 
 
 def solve(x: np.ndarray, n: int) -> np.ndarray:
-
     return gelu(x)
