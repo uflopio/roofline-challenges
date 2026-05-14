@@ -137,7 +137,7 @@ def generate_cuda_snippet(spec: dict) -> str:
 
 void solve({args_str}) {{
   // Solution goes here.
-  // Keep in mind: the pointers are on the GPU.
+  // Keep in mind: the pointers are on the GPU!
 }}
 """
 
