@@ -1,3 +1,5 @@
 .venv/
 .vale/
 .challenges-cache/
+__pycache__
+challenges/*/templates/cuda.cu
