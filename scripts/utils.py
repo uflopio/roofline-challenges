@@ -77,7 +77,7 @@ def format_bytes(num_bytes: int, precision: int = 2) -> str:
     for unit, factor in reversed(_BINARY.items()):
         if abs_bytes >= factor:
             value = num_bytes / factor
-            return f"{value:.{precision}f} {unit}"
+            return f"{value:.{precision}f} {unit.title()}"
 
     return f"{num_bytes} B"
 
