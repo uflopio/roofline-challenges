@@ -55,9 +55,9 @@ spec:
   - height: 4096
     width: 4096
     kernel_size: 21
-  - height: 4096
-    width: 4096
-    kernel_size: 27
+  - height: 4093
+    width: 4093
+    kernel_size: 23
 ---
 
 Apply a box blur filter to a grayscale image by averaging pixels in a square neighborhood:

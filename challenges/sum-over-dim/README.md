@@ -25,16 +25,18 @@ spec:
     dtype: i32
     kind: const
   inputs:
+  - m: 256
+    n: 256
+  - m: 512
+    n: 512
   - m: 1024
     n: 1024
+  - m: 2048
+    n: 2048
   - m: 4096
     n: 4096
-  - m: 8192
-    n: 8192
-  - m: 1024
-    n: 65535
-  - m: 65536
-    n: 1024
+  - m: 8191
+    n: 4093
 ---
 
 Given matrix $A$ of shape $m \times n$, produce vector $\underline{r}$ of length $m$ such that

@@ -30,8 +30,8 @@ spec:
     m: 524288
   - n: 64
     m: 262144
-  - n: 128
-    m: 131072
+  - n: 127
+    m: 131071
 ---
 
 Compute the L1 norm of each row of a matrix.

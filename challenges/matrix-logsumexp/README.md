@@ -24,8 +24,8 @@ spec:
     kind: out
     dtype: f32
   inputs:
-  - m: 1024
-    n: 1024
+  - m: 1021
+    n: 1021
   - m: 2048
     n: 2048
   - m: 4096

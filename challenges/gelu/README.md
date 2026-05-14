@@ -20,11 +20,11 @@ spec:
     kind: const
     dtype: i32
   inputs:
-  - n: 4194304
+  - n: 4194301
   - n: 8388608
   - n: 16777216
   - n: 33554432
-  - n: 67108864
+  - n: 65521
 ---
 
 Given vector $\underline{x}$ of length $n$, produce vector $\underline{y}$ of length $n$ such that, with $i$ indexing over $n$, 

@@ -38,8 +38,8 @@ spec:
     l: 48
   - n: 4096
     l: 4096
-  - n: 2048
-    l: 65535
+  - n: 2039
+    l: 65521
 supporterOnly: true
 ---
 

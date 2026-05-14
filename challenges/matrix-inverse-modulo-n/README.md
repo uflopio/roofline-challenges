@@ -21,11 +21,12 @@ spec:
     kind: out
     dtype: bool*
   inputs:
-  - n: 4194304
-  - n: 8388608
-  - n: 16777216
-  - n: 33554432
-  - n: 67108864
+  - n: 512
+  - n: 1024
+  - n: 2048
+  - n: 4096
+  - n: 8192
+  - n: 11279
 ---
 
 Given an **integer** matrix $A$ of shape $n \times n$, determine if it is invertible $\text{mod}\, m$.
