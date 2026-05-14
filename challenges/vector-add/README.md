@@ -30,8 +30,7 @@ spec:
   - n: 4194304
   - n: 8388608
   - n: 16777216
-  - n: 33554432
-  - n: 67108859
+  - n: 33554393
 ---
 
 Given vectors $\underline{a}$ and $\underline{b}$ of length $n$, produce vector $\underline{c}$ of length $n$ such that $c_i = a_i + b_i$.
