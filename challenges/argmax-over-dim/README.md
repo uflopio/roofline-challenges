@@ -7,26 +7,23 @@ tags: [reduction, matrix, intro]
 depends_on: [sum-reduction]
 supporterOnly: false
 spec:
-  tolerance: 0.0
   signature:
-  - name: m
-    kind: const
-    dtype: i32
-  - name: n
-    kind: const
-    dtype: i32
-  - name: A
+  - name: input
     kind: in
-    dtype: f32
-    shape:
-    - m
-    - n
-    init: uniform(0, 1)
-  - name: k
+    dtype: f32*
+    init: uniform(-0x00800000, 0x00800000)
+  - name: output
     kind: out
+    dtype: f32*
+  - name: shape
+    kind: const
+    dtype: i32*
+  - name: shape_size
+    kind: const
     dtype: i32
-    shape:
-    - m
+  - name: dim
+    kind: const
+    dtype: i32
   inputs:
   - m: 1024
     n: 1024
@@ -40,9 +37,12 @@ spec:
     n: 1024
 ---
 
-Compute the row-wise argmax of a matrix.
+Compute the argmax of a tensor over dim.
 
-Given matrix $A$ of shape $m \times n$, produce integer vector $\underline{k}$ of length $M$ such that
+Find the indices of maximum values along a specified dimension of an input tensor:
+\text{output}[i_1, \dots, i_{d-1}, i_{d+1}, \dots, i_n] = \underset{i_d}{\arg\max} \; \text{input}[i_1, \dots, i_d, \dots, i_n]
+
+where dd is the dimension to perform argmax over, nn is the number of dimensions.
 
 $$
 k_i = \arg\max_j A_{ij}
