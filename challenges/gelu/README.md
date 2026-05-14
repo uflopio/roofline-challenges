@@ -34,3 +34,11 @@ y_i = \frac{x_i}{2} \left( 1 + \tanh\left( \sqrt{\tfrac{2}{\pi}} \left( x_i + 0.
 $$
 
 Do not use the exact erf-based GELU. Use the approximate form above.
+
+## Input
+
+- `n` - the number of elements in the vectors.
+- `x` - input vector of length $n$ containing single-precision floating-point values after applied GELU.
+
+## Output
+- `y` - output vector of length n where each element is the approximate GELU activation applied to the corresponding element of x.

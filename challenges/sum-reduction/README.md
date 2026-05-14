@@ -24,5 +24,13 @@ spec:
 Compute the sum $s$ of all elements in the vector $a$ of length $n$.
 
 $$
-s = \sum_{i}^{n} a_i
+s = \sum_{i}^{n} \underline{a}_i
 $$
+
+## Input
+
+- `a` - the vector to take the sum along.
+
+## Output
+
+- `s` - the sum of the elements of $\underline{a}$.

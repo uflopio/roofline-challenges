@@ -35,3 +35,13 @@ spec:
 ---
 
 Given vectors $\underline{a}$ and $\underline{b}$ of length $n$, produce vector $\underline{c}$ of length $n$ such that $c_i = a_i + b_i$.
+
+## Input
+
+- `a` - first input vector.
+- `b` - second input vector.
+- `n` - the length of the vectors $a$ and $b$;.
+
+## Output
+
+- `c` - the summed vector.

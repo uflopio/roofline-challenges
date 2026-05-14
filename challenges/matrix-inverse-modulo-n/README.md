@@ -31,3 +31,13 @@ spec:
 Given an **integer** matrix $A$ of shape $n \times n$, determine if it is invertible $\text{mod}\, m$.
 
 For a matrix to be invertible $\text{mod}\, m$ we require that there exists some $A^{-1}$ such that $A^{-1}A = I$ when the multiplication of the elements is performed $\text{mod}\,m$.
+
+## Input
+
+- `n` - dimension of the square matrix $A$.
+- `m` - modulus for the arithmetic operations.
+- `A` - integer matrix whose invertibility must be determined.
+
+## Output
+
+- `is_invertible` - a single value indicating whether $A$ is invertible.

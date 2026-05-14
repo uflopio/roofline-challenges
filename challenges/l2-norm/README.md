@@ -11,41 +11,41 @@ spec:
   - name: X
     kind: in
     dtype: f32
-    shape: [B, D]
+    shape: [n, m]
     init: uniform(-1, 1)
   - name: Y
     kind: out
     dtype: f32
-    shape: [B]
-  - name: B
+    shape: [n]
+  - name: n
     kind: const
     dtype: i32
-  - name: D
+  - name: m
     kind: const
     dtype: i32
   inputs:
-  - B: 16
-    D: 1048576
-  - B: 32
-    D: 524288
-  - B: 64
-    D: 262144
-  - B: 128
-    D: 131072
+  - n: 16
+    m: 1048576
+  - n: 32
+    m: 524288
+  - n: 64
+    m: 262144
+  - n: 128
+    m: 131072
 ---
 
 Compute the L2 norm of each row of a matrix.
 
-Given matrix $X$ of shape $B \times D$ in row-major order, produce vector $\underline{y}$ of length $B$ such that
+Given matrix $X$ of shape $n \times m$ in row-major order, produce vector $\underline{y}$ of length $n$ such that
 
 $$
-y_b = \sqrt{\sum_{d=0}^{D-1} X_{b,d}^2}.
+y_i = \sqrt{\sum_{j}^{m} X_{i\,j}^2}
 $$
 
 ## Input
 
-- Matrix $X$ of shape $B \times D$.
+- Matrix $X$ of shape $n \times m$.
 
 ## Output
 
-- Vector $\underline{y}$ of length $B$.
+- Vector $\underline{y}$ of length $n$.

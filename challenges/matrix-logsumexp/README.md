@@ -12,17 +12,17 @@ spec:
   - name: A
     kind: in
     dtype: f32
-    shape: ["m", "n"]
+    shape: [m, n]
     init: uniform(0, 1)
-  - name: s
-    kind: out
-    dtype: f32
   - name: m
     kind: const
     dtype: i32
   - name: n
     kind: const
     dtype: i32
+  - name: s
+    kind: out
+    dtype: f32
   inputs:
   - m: 1024
     n: 1024
@@ -40,4 +40,14 @@ $$
 \hat{A}_{ij} = \max_{ij} A_{ij} \quad s = \log\left(\sum_{i}^{M} \sum_{j}^{N} \exp\left(A_{ij} - \hat{A}_{ij} \right) \right) + \hat{A}_{ij} 
 $$
 
-NB: The shift by $m$ is required for numerical stability. Without it, $\exp(A_{ij})$ overflows the `f32` range as soon as $A_{ij}$ exceeds $\sim 88$.
+NB: The shift by $\hat{A}_{ij}$ is required for numerical stability. Without it, $\exp(A_{ij})$ overflows the `f32` range as soon as $A_{ij}$ exceeds $\sim 88$.
+
+## Input
+
+- `A` - input matrix.
+- `m` - rows of $A$.
+- `n` - columns of $A$.
+
+## Output
+
+- `s` - the value decided by the formula above.

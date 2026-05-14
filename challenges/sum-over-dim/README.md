@@ -42,3 +42,13 @@ Given matrix $A$ of shape $m \times n$, produce vector $\underline{r}$ of length
 $$
 r_i = \sum_{j}^{n} A_{ij}
 $$
+
+## Input
+
+- `A` - the matrix to take the row-wise sum of.
+- `m` - number of rows of $A$.
+- `n` - number of columns of $A$.
+
+## Output
+
+- `r` - row-wise sum of the matrix.

@@ -65,10 +65,3 @@ All matrices are stored in row-major order.
 ## Output
 
 - Matrix $C$ of shape $M \times N$ such that $C = A \cdot B$.
-
-## Sizes
-
-- $M = N = K = 2^9$
-- $M = N = K = 2^{10}$
-- $M = N = K = 2^{11}$
-- $M = N = K = 2^{12}$
