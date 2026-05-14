@@ -33,86 +33,72 @@ DTYPE_SIZE = {
 
 
 def normalize_dtype(dtype: str) -> str:
-    """Strip pointer suffix (*) from dtype strings like 'f32*' -> 'f32'."""
     return dtype.rstrip("*") if isinstance(dtype, str) else dtype
+
+
+def build_const_env(inp: dict) -> dict:
+    return dict(inp)
 
 
 def eval_total_elements(shape, const_env: dict) -> int:
     if shape is None:
         return 1
 
-    dims = shape if isinstance(shape, list) else [shape]
+    if isinstance(shape, str):
+        resolved = const_env.get(shape)
+        if isinstance(resolved, list):
+            total = 1
+            for dim in resolved:
+                total *= dim
+            return total
+        dims = [shape]
+    elif isinstance(shape, list):
+        dims = shape
+    else:
+        return eval_shape(shape, const_env)
 
     missing = set()
     for dim in dims:
         if isinstance(dim, str):
-            # Extract bare identifiers (variable names) from the expression.
             for token in re.findall(r"[A-Za-z_][A-Za-z0-9_]*", dim):
                 if token not in const_env:
                     missing.add(token)
     if missing:
         raise ValueError(
             f"Shape expression references variable(s) {sorted(missing)} "
-            f"that are not defined in any 'const' entry's 'values' list "
-            f"or in the spec's 'inputs' configurations. "
-            f"Available names: {sorted(const_env.keys())}"
+            f"not in inputs. Available names: {sorted(const_env.keys())}"
         )
 
-    if isinstance(shape, list):
-        total = 1
-        for dim in dims:
-            total *= eval_shape(dim, const_env)
-        return total
-
-    return eval_shape(shape, const_env)
+    total = 1
+    for dim in dims:
+        total *= eval_shape(dim, const_env)
+    return total
 
 
-def check_max_input_size(spec: dict) -> int:
-    signature = spec.get("signature", [])
-
-    const_env: dict = {}
-    for entry in signature:
-        if entry.get("kind") != "const":
-            continue
-        name = entry["name"]
-        values = entry.get("values", [])
-        if values:
-            evaluated = [eval_shape(v, const_env) for v in values]
-            const_env[name] = max(evaluated)
-
-    inputs = spec.get("inputs", [])
-    if inputs:
-        input_env: dict = {}
-        for inp in inputs:
-            for k, v in inp.items():
-                if k not in input_env or v > input_env[k]:
-                    input_env[k] = v
-        for k, v in input_env.items():
-            if k not in const_env:
-                const_env[k] = v
-
+def calc_input_size(spec: dict, inp: dict) -> int:
+    const_env = build_const_env(inp)
     total_bytes = 0
-    for entry in signature:
+    for entry in spec.get("signature", []):
         kind = entry.get("kind")
         if kind not in ("in", "out", "inout"):
             continue
-
-        raw_dtype = entry.get("dtype", "")
-        dtype = normalize_dtype(raw_dtype)
-
+        dtype = normalize_dtype(entry.get("dtype", ""))
         if dtype not in DTYPE_SIZE:
             raise ValueError(
-                f"Unknown dtype '{raw_dtype}' (normalized: '{dtype}') "
-                f"in entry '{entry.get('name')}'. "
-                f"Add it to DTYPE_SIZE if intentional."
+                f"Unknown dtype '{entry.get('dtype')}' in entry '{entry.get('name')}'."
             )
-
         element_size = DTYPE_SIZE[dtype]
         shape = entry.get("shape", None)
         num_elements = eval_total_elements(shape, const_env)
         total_bytes += num_elements * element_size
-
     return total_bytes
+
+
+def check_max_input_size(spec: dict) -> int:
+    inputs = spec.get("inputs", [])
+    if not inputs:
+        return 0
+    return max(calc_input_size(spec, inp) for inp in inputs)
 
 
 def nearest_prime(n: int) -> int:
@@ -123,19 +109,23 @@ def nearest_prime(n: int) -> int:
     return prevprime(n)
 
 
-def check_prime_test_inputs(spec: dict) -> bool:
-    """
-    Verify that at least one input configuration has every const value set to
-    a prime number, so the total element count is a product of primes and is
-    guaranteed not to be a power of two.
+def all_prime_values(inp: dict, const_names: set) -> bool:
+    for k, v in inp.items():
+        if k not in const_names:
+            continue
+        if isinstance(v, list):
+            if not all(isprime(x) for x in v):
+                return False
+        elif not isprime(v):
+            return False
+    return True
 
-    Returns True if satisfied, False with a printed diagnostic otherwise.
-    """
+
+def check_prime_test_inputs(spec: dict) -> bool:
     inputs = spec.get("inputs", [])
     if not inputs:
         return True
 
-    # Only integer-typed const params are meaningful dimension values.
     INT_DTYPES = {"i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64"}
     const_names = {
         entry["name"]
@@ -148,20 +138,29 @@ def check_prime_test_inputs(spec: dict) -> bool:
         relevant = {k: v for k, v in inp.items() if k in const_names}
         if not relevant:
             continue
-        if all(isprime(v) for v in relevant.values()):
-            return True  # Found a qualifying configuration.
+        if all_prime_values(inp, const_names) and calc_input_size(spec, inp) <= MAX_SIZE_BYTES:
+            return True
 
-    # No qualifying configuration — build a helpful suggestion from the first
-    # input config: replace each non-prime value with its nearest prime.
-    example = inputs[0]
+    example = inputs[-1]
     relevant_example = {k: v for k, v in example.items() if k in const_names}
-    non_prime = {k: v for k, v in relevant_example.items() if not isprime(v)}
-    suggestions = {k: nearest_prime(v) for k, v in non_prime.items()}
+    non_prime = {}
+    for k, v in relevant_example.items():
+        if isinstance(v, list):
+            if not all(isprime(x) for x in v):
+                non_prime[k] = v
+        elif not isprime(v):
+            non_prime[k] = v
+    suggestions = {}
+    for k, v in non_prime.items():
+        if isinstance(v, list):
+            suggestions[k] = [nearest_prime(x) for x in v]
+        else:
+            suggestions[k] = nearest_prime(v)
 
     print(
         f" ERR  No input configuration has all-prime const values.\n"
-        f"      Non-prime values in first config: {non_prime}\n"
-        f"      Suggested prime replacements:     {suggestions}"
+        f"      Non-prime values in last config: {non_prime}\n"
+        f"      Suggested prime replacements:    {suggestions}"
     )
     return False
 
