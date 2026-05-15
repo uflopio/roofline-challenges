@@ -53,8 +53,7 @@ You get the value for $\underline{c}_A$ in the input `c`. When you're done `c` s
 - `l` - alphabet modulus.
 - `A` - original encryption key.
 - `B` - target encryption key.
-- `c` - ciphertext encrypted under $A$, given in-place.
+- `c` - ciphertext encrypted under `A`, provided in place.
 
 ## Output
-
-- The input vector `c` modified in-place to become $\underline{c}_B$.
+- `c` - the input vector modified in place to become $\underline{c}_B$.

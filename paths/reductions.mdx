@@ -13,8 +13,6 @@ Reductions are one of the foundational patterns in parallel computing. Given a s
 
 On a GPU, the challenge is *not* the arithmetic. A reduction does $N$ operations to consume $N$ values; arithmetic-wise it's trivial. The real game is parallelism and memory: a naïve serial loop has $O(N)$ latency, while a tree reduction has $O(\log N)$ latency given enough threads. The art is mapping that tree onto threads, blocks, and warps so that bandwidth and the warp-level primitives are saturated rather than the arithmetic units.
 
-This path walks you from the simplest sum to the hierarchical reductions production codebases actually ship. Along the way you'll meet shared memory, warp shuffles, atomic operations, multi-pass kernels, and the classic gotchas — bank conflicts, divergent branches, occupancy ceilings, partial-sum precision drift.
-
 By the end you'll know when to roll your own and when to reach for a library primitive.
 
 ## Great resources

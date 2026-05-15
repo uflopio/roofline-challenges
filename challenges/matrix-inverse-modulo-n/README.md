@@ -43,10 +43,9 @@ For a matrix to be invertible $\text{mod}\, m$ we require that there exists some
 
 ## Input
 
-- `n` - dimension of the square matrix $A$.
+- `n` - dimension of the square matrix `A`.
 - `m` - modulus for the arithmetic operations.
-- `A` - integer matrix whose invertibility must be determined.
+- `A` - integer matrix whose invertibility is to be determined.
 
 ## Output
-
-- `is_invertible` - a single value indicating whether $A$ is invertible.
+- `is_invertible` - a single value indicating whether `A` is invertible modulo `m`.

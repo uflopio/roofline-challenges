@@ -34,8 +34,8 @@ $$
 
 ## Input
 
-- `a` - the vector to take the sum along.
+- `a` - input vector of length `n`.
+- `n` - the number of elements in `a`.
 
 ## Output
-
-- `s` - the sum of the elements of $\underline{a}$.
+- `s` - the sum of all elements of `a`.

@@ -39,11 +39,10 @@ Given a tensor $A$ with rank $n$ and shape $\text{shape}$ stored in row-major or
 
 ## Input
 
-- `input` - a pointer to a contiguous tensor stored in row-major order containing 32-bit floating-point values.
-- `shape` - an integer array describing the dimensions of the input tensor. Its length is given by `shape_size`.
+- `input` - input tensor stored in row-major order containing single-precision floating-point values.
+- `shape` - integer array describing the dimensions of the input tensor; its length is `shape_size`.
 - `shape_size` - the number of dimensions (rank) of the tensor.
-- `dim` - the axis along which to compute the maximum (0-indexed, valid in `[0, shape_size)`).
+- `dim` - the axis along which to reduce (0-indexed, valid in `[0, shape_size)`).
 
 ## Output
-
-- `output` - a pointer to a tensor containing the maximum values computed by reducing `input` along dimension `dim`.
+- `output` - tensor containing the maximum values from reducing `input` along dimension `dim`.

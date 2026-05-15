@@ -44,8 +44,9 @@ $$
 
 ## Input
 
-- Matrix $X$ of shape $n \times m$.
+- `X` - input matrix of shape `[n][m]` stored in row-major order.
+- `n` - the number of rows in `X`.
+- `m` - the number of columns in `X`.
 
 ## Output
-
-- Vector $\underline{y}$ of length $n$.
+- `Y` - output vector of length `n` where each element is the L1 norm of the corresponding row of `X`.
