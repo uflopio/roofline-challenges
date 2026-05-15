@@ -37,10 +37,9 @@ Given vectors $\underline{a}$ and $\underline{b}$ of length $n$, produce vector 
 
 ## Input
 
-- `a` - first input vector.
-- `b` - second input vector.
-- `n` - the length of the vectors $a$ and $b$;.
+- `a` - first input vector of length `n`.
+- `b` - second input vector of length `n`.
+- `n` - the number of elements in each vector.
 
 ## Output
-
-- `c` - the summed vector.
+- `c` - output vector of length `n` such that $c_i = a_i + b_i$.

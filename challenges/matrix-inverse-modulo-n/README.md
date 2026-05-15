@@ -3,6 +3,7 @@ slug: matrix-inverse-modulo-n
 title: Matrix Inverse Modulo n
 difficulty: EASY
 ranked: true
+supporterOnly: true
 tags: [cryptography]
 spec:
   signature:
@@ -16,17 +17,24 @@ spec:
     kind: in
     dtype: i32
     shape: [n, n]
-    init: uniform(0, 100)
+    init: uniform(0, 25)
   - name: is_invertible
     kind: out
-    dtype: bool*
+    dtype: i32
+    shape: [1]
   inputs:
   - n: 512
+    m: 26
   - n: 1024
+    m: 26
   - n: 2048
+    m: 26
   - n: 4096
+    m: 26
   - n: 8192
+    m: 26
   - n: 11279
+    m: 26
 ---
 
 Given an **integer** matrix $A$ of shape $n \times n$, determine if it is invertible $\text{mod}\, m$.
@@ -35,10 +43,9 @@ For a matrix to be invertible $\text{mod}\, m$ we require that there exists some
 
 ## Input
 
-- `n` - dimension of the square matrix $A$.
+- `n` - dimension of the square matrix `A`.
 - `m` - modulus for the arithmetic operations.
-- `A` - integer matrix whose invertibility must be determined.
+- `A` - integer matrix whose invertibility is to be determined.
 
 ## Output
-
-- `is_invertible` - a single value indicating whether $A$ is invertible.
+- `is_invertible` - a single value indicating whether `A` is invertible modulo `m`.

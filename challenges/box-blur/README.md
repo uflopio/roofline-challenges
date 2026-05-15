@@ -72,12 +72,10 @@ This creates a blurring effect by smoothing out pixel values. The larger the ker
 
 ## Input
 
+- `input_image` - grayscale image of shape `[height][width]` containing floating-point pixel intensities in the range $[0, 255]$.
 - `height` - the number of rows in the image.
 - `width` - the number of columns in the image.
-- `kernel_size` - the side length of the square blur kernel.  
-  The kernel is centered on each pixel, and its radius is:
-- `input_image` - a 2D grayscale image of shape $\text{width} \times \text{height}$ containing floating-point pixel intensities in the range $[0, 255]$.
+- `kernel_size` - the side length of the square blur kernel.
 
 ## Output
-
-- `output_image` — a blurred grayscale image of shape `[height][width]`.
+- `output_image` - blurred grayscale image of shape `[height][width]`.

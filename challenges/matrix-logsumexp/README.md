@@ -44,10 +44,9 @@ NB: The shift by $\hat{A}_{ij}$ is required for numerical stability. Without it,
 
 ## Input
 
-- `A` - input matrix.
-- `m` - rows of $A$.
-- `n` - columns of $A$.
+- `A` - input matrix of shape `[m][n]` stored in row-major order.
+- `m` - the number of rows in `A`.
+- `n` - the number of columns in `A`.
 
 ## Output
-
-- `s` - the value decided by the formula above.
+- `s` - the log-sum-exp value computed from the formula above.

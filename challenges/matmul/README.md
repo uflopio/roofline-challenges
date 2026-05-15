@@ -59,9 +59,11 @@ All matrices are stored in row-major order.
 
 ## Input
 
-- Matrix $A$ of shape $M \times K$.
-- Matrix $B$ of shape $K \times N$.
+- `A` - input matrix of shape `[m][k]` stored in row-major order.
+- `B` - input matrix of shape `[k][n]` stored in row-major order.
+- `m` - the number of rows in `A` and `C`.
+- `n` - the number of columns in `B` and `C`.
+- `k` - the number of columns in `A` and rows in `B`.
 
 ## Output
-
-- Matrix $C$ of shape $M \times N$ such that $C = A \cdot B$.
+- `C` - output matrix of shape `[m][n]` such that $C = AB$.

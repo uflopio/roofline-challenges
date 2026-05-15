@@ -47,10 +47,9 @@ $$
 
 ## Input
 
-- `A` - the matrix to take the row-wise sum of.
-- `m` - number of rows of $A$.
-- `n` - number of columns of $A$.
+- `A` - input matrix of shape `[m][n]` stored in row-major order.
+- `m` - the number of rows in `A`.
+- `n` - the number of columns in `A`.
 
 ## Output
-
-- `r` - row-wise sum of the matrix.
+- `r` - output vector of length `m` containing the row-wise sums of `A`.
