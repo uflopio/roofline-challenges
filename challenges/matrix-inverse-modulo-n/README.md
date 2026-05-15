@@ -3,7 +3,7 @@ slug: matrix-inverse-modulo-n
 title: Matrix Inverse Modulo n
 difficulty: EASY
 ranked: true
-supporter-only: true
+supporterOnly: true
 tags: [cryptography]
 spec:
   signature:
