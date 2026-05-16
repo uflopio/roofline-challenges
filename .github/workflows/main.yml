@@ -8,12 +8,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Spellcheck
-        uses: simbo/vale-action@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          flags: '--no-exit'
+      - name: Install Vale
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y vale
+
+      - name: Sync Vale styles
+        run: |
+          mkdir -p .vale/styles
+          vale sync
+      
+      - name: Run Vale
+        run: vale --no-exit challenges
 
       - name: Set up Python
         uses: actions/setup-python@v5
