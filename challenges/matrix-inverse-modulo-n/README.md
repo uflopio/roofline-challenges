@@ -10,14 +10,14 @@ spec:
   - name: n
     kind: const
     dtype: i32
-  - name: m
-    kind: const
-    dtype: i32
   - name: A
     kind: in
     dtype: i32
     shape: [n, n]
     init: uniform(0, 25)
+  - name: m
+    kind: const
+    dtype: i32
   - name: is_invertible
     kind: out
     dtype: bool
