@@ -34,7 +34,7 @@ spec:
   - n: 8192
     m: 26
   - n: 11279
-    m: 26
+    m: 23
 ---
 
 Given an **integer** matrix $A$ of shape $n \times n$, determine if it is invertible $\text{mod}\, m$.
