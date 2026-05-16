@@ -44,7 +44,7 @@ $$
 
 ## Input
 
-- `X` - input matrix of shape `[n][m]` stored in row-major order.
+- `X` - input matrix of shape $n \times m$ stored in row-major order.
 - `n` - the number of rows in `X`.
 - `m` - the number of columns in `X`.
 

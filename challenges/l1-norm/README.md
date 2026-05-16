@@ -44,10 +44,10 @@ $$
 
 ## Input
 
-- `X` — input matrix of shape $n \times m$ stored in row-major order
-- `n` — number of rows in `X`
-- `m` — number of columns in `X`
+- `X` — input matrix of shape $n \times m$ stored in row-major order.
+- `n` — number of rows in `X`.
+- `m` — number of columns in `X`.
 
 ## Output
 
-- `Y` — output vector of length `n`, where each element `Y[i]` is the L1 norm of row `i` of `X`
+- `Y` — output vector of length `n`, where each element `Y[i]` is the L1 norm of row `i` of `X`.
