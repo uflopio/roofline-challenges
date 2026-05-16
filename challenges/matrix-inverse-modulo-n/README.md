@@ -20,7 +20,7 @@ spec:
     init: uniform(0, 25)
   - name: is_invertible
     kind: out
-    dtype: i32
+    dtype: bool
     shape: [1]
   inputs:
   - n: 512

@@ -123,9 +123,10 @@ def generate_cuda_snippet(spec: dict) -> str:
         shape = entry.get("shape", None)
         if shape:
             return f"const {dt}*" if entry["kind"] == "in" else f"{dt}*"
-
         if is_ptr:
             dt = dt + "*"
+        elif entry["kind"] == "out":
+            return f"{dt}*"
 
         return dt
 
